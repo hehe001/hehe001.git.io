@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <script src="../jquery.js"></script>
+    <!-- <script src="//fe.xhanglu.com/lib/js/jquery.js"></script> -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .row {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<input type="text" value="">
+<div id="div"></div>
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+<script>
+    $(function(){
+
+        var rawData = {
+            "_id" : 129,
+            "name": "test",
+            "sex" : "男",
+            "age" : "29",
+            "avatar": "/asets/images/img.png",
+            "birthday": "1988-04-09",
+            "constellation":"",
+            "zodiac":"",
+            "city_live" : {
+                "province" : "北京",
+                "city" : "昌平"
+            },
+            "city_birth" : {
+                "province":"北京",
+                "city":"东城区"
+            },
+            "resigned" : true,
+            "telephone" : "13611171158",
+            "email":"llqfront@gmail.com",
+            "work_experience" : "10年以上",
+            "intent": [
+                {
+                    industry: '请选期望行业',
+                    position: '期望职位：',
+                    area_province: 'area_province',
+                    area_city: 'area_city',
+                    salary: 'salary',
+                    production: 'production',
+                    sell_mode: ['arrMode','arrMode','arrMode'],
+                    business_trip: '期望工作地区'
+                }
+            ],
+            "language": [
+                {
+                    category:'英语',
+                    listen: '听力',
+                    speak: '口语',
+                    read: '阅读',
+                    write: '写作'
+                },
+                {
+                    category:'英语',
+                    listen: '听力',
+                    speak: '口语',
+                    read: '阅读',
+                    write: '写作'
+                }
+            ],
+            "work_history": [
+                {
+                    company:'新航路一',
+                    position:'职位名称',
+                    start_year:'开始时间',
+                    end_year:'线束时间：',
+                    sales_type:'职位类型',
+                    reportto:'汇报对象：',
+                    subordinate:'下属人数：',
+                    desc:'业绩描述：',
+                    sales_year:'年销售额：',
+                    finish_rate:'目标完成率：',
+                    productions:'产品：',
+                    sell_target:'销售对象：',
+                    sell_mode:'销售方式：',
+                },
+                {
+                    company:'新航路第二个公司名称',
+                    position:'职位名称',
+                    start_year:'开始时间',
+                    end_year:'线束时间：',
+                    sales_type:'职位类型',
+                    reportto:'汇报对象：',
+                    subordinate:'下属人数：',
+                    desc:'业绩描述：',
+                    sales_year:'年销售额：',
+                    finish_rate:'目标完成率：',
+                    productions:'产品：',
+                    sell_target:'销售对象：',
+                    sell_mode:'销售方式：',
+                }
+            ],
+            "edu_history": [
+                {
+                    school:'学校名称：',
+                    major:'专业名称：',
+                    level:'学历',
+                    start_year:'开始时间',
+                    end_year:'线束时间：'
+                },
+                {
+                    school:'学校名称：',
+                    major:'专业名称：',
+                    level:'学历',
+                    start_year:'开始时间',
+                    end_year:'线束时间：'
+                }
+            ],
+            "train":[
+                {
+                    name:'培训名称：',
+                    rog:'培训机构：',
+                    start_year:'开始时间',
+                    end_year:'线束时间：'
+                },
+                {
+                    name:'培训名称：',
+                    rog:'培训机构：',
+                    start_year:'开始时间',
+                    end_year:'线束时间：'
+                }
+            ]
+        }
+        var str = '<b>sdfasfd</b>';
+        $('#div').html(str);
+        // $('#div').val('')
+        // oDiv.value = str;
+        var ihtml = $('<h4>这是创建一个元素</h4>');
+        // 可以正常文档操作
+        ihtml.css({
+            "border":"1px solid red",
+            "widht":"199px",
+            "color":"red"
+        })
+        // 添加
+        $('#div1').append(ihtml);
+        // var stttt = "<div><p class=\"test\">asdfasdf</p></div>";
+        var stttt = '<div><p class="test">asdfasdf</p><p class="test">asdfasdf</p><p class="test">asdfasdf</p><p class="test">asdfasdf</p><p class="test">asdfasdf</p><p class="test">asdfasdf</p></div>';
+        // 定义多行html 通过\  来换行
+        // dsfasdfasdfsdfdsfasdfsadfadsfsda
+        /**
+            afsdf
+            asdfsdf
+            asdfsdf
+        */
+        var str1 = '<div class="pop-item-box">\
+            <h4>\
+            <i></i>\
+            <span>1111新的标签'+str+'</span></h4>\
+            <p>\
+            <a href="javascript:;" class="sure">确认</a>\
+            <a href="javascript:;" class="cancel">取消222</a></p>\
+            </div>';
+        $('#div2').html(str1);
+        // console.log(rawData.work_history)
+        var workpr = rawData.work_history;
+        // var obj = document.getELementById('test');
+        // obj.id = 
+        // obj.className 
+        // obj.value
+        var wk = {
+            company:'公司1111名称',
+            position:'职位名称',
+            start_year:'开1111始时间',
+            end_year:'线束时间：',
+            sales_type:'职位类型',
+            reportto:'汇报对象：',
+            subordinate:'下属人数：',
+            desc:'业绩描述：',
+            sales_year:'年销售额：',
+            finish_rate:'目标完成率：',
+            productions:'产品：',
+            sell_target:'销售对象：',
+            sell_mode:'11111销售方式：',
+        }
+        
+        // 一 、 push 操作
+        // 往数组里添加新的一条工作经历
+        var newWorkArr = workpr.push(wk);
+        // 最终打印测试
+        // console.log(workpr);
+        // 二、修改操作
+        var arr = [1,2,3,3,3,7];
+        // 两种方式
+        arr[2] = '00'
+        // 
+        arr.splice(3,1,'66')
+        // console.log(arr)
+        // workpr[1] = wk;
+        // 删除
+        // workpr.splice(0,1)
+        // 替换
+        workpr.splice(0,1,wk)
+        console.log(workpr)
+        // for(var key in rawData){
+        //     console.log(key)
+        // }
+        // for(var i=0,len=rawData.length;i<len;i++){
+        //     console.log(workpr[i])
+        // }
+       
+        var arr = [1,2,3,4,5];
+        $.each(arr,function(key,val){
+            // key  下标 相当于  js for 中的i
+            // val  下标值 相当于  js for 中arr[i]
+            // console.log(key+"----"+val)
+        })
+        // for(var i=0;i<arr.length;i++){
+        for(var i=0,len=arr.length;i<len;i++){
+            // console.log(i+'===='+arr[i])
+        }
+        // 
+        var strs = '';
+        $.each(workpr,function(key,val){
+            strs += '<div data-index="'+key+'" class="row" index="'+key+'">\
+            <h5>'+key+'</h5>\
+            <h3>'+val.company+'</h3>\
+            <p>'+val.position+'</p>\
+            <span>'+val.start_year+'</span>\
+            <var>'+val.sell_mode+'</var>\
+            </div>';
+        })
+        // js 方式
+        var strs2 = '';
+        for(var i=0,len=workpr.length;i<len;i++){
+            strs2 += '<div data-index="'+i+'" class="row" index="'+i+'">\
+            <h5>'+i+'</h5>\
+            <h3>'+workpr[i].company+'</h3>\
+            <p>'+workpr[i].position+'</p>\
+            <span>'+workpr[i].start_year+'</span>\
+            <var>'+workpr[i].sell_mode+'</var>\
+            </div>';
+        }
+        $('#div3').html(strs2);
+        // console.log($('#div3 .row').eq(1).data('index'))
+        // 设置 两个值  第一个 自定义属性名 第二个是值
+        $('#div3').data('key','300')
+        // 直接获取 
+        $('#div3').data('key');
+        // html 中的表现
+        /**
+            <div data-index="asdfasdf"></div>
+            <div data-name="小红"></div>
+            <div data-age="32"></div>
+             // 设置 两个值  第一个 自定义属性名 第二个是值
+            $('#div3').data('key','300')
+            // 直接获取 
+            $('#div3').data('key');
+        */
+    })
+</script>
+</body>
+</html>
+
+
+
+
+
+

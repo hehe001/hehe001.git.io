@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+<div id="test" class="clsname" test="testsss">test</div>
+<script>
+	function attr(obj, attr, value){
+        if(arguments.length==2){
+            // if(obj.attributes[attr]){
+            //     return obj.attributes[attr].nodeValue;
+            // }else{
+            //     return null;
+            // }
+            return obj.getAttribute(attr)
+        }
+        else if(arguments.length==3){
+            obj.setAttribute(attr,value);
+        }
+    };
+    var id = document.getElementById('test');
+    attr(id, 'bcd', 'abcde');
+    console.log(attr(id, 'tesssst'))
+    // console.log(id.attributes['test'].nodeValue)
+    // console.log(attr(id,'ids'))
+    // attr(id,'aaa','teststests');
+
+    
+    // 只有文本节点的nodeValue才有值，id一个div节点，它的子节点才是一个文本节点
+    // console.log(id.childNodes[0].nodeValue);
+
+
+    // //attributes 属性返回指定节点的属性集合 
+    // console.log(id.attributes['id']); // id="test"
+    // console.log(id.attributes['class'].nodeValue); 
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+		.class,div {
+			border: 1px solid red;
+			width: 100px;
+			height: 100px;
+		}
+        .div2 {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+<div id="test" class="div1"></div>
+
+<script>
+ // div1 
+ // test 
+ // div1 test
+
+
+// class 名字
+// 空格 + class 名字
+var oDiv = document.getElementById('test');
+// oDiv.className = oDiv.className+' '+'test';
+function addClass(obj,name){
+    if(obj.className==''){
+        obj.className = name;
+    }else {
+        obj.className += ' ';
+        obj.className += name;
+    }
+    // oDiv.className = 'aaa';  // class
+    // oDiv.className = 'aaa bbb'; // 空格  class
+}
+addClass(oDiv,'div1')
+	// function addClass(obj,name){
+ //        if(obj.className!==''){
+ //            obj.className += ' ';
+ //            obj.className += name;
+ //        }else{
+ //            obj.className = name;
+ //        }
+ //    }
+ //    var oDiv = document.getElementById('test');
+ //    addClass(oDiv,'test');
+</script>
+</body>
+</html>

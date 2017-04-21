@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+		<style type="text/css">
+			* {
+				margin: 0px auto;
+				padding: 0;
+			}
+			
+			#wrap {
+				border: 1px solid red;
+				height: 657px;
+				width: 600px;
+				box-shadow: 1px 1px 10px black;
+				position: relative;
+			}
+			#score{
+				width: 100px;
+				height: 50px;
+				border: 1px solid #999;
+				text-align: center;
+				line-height: 50px;
+				
+			}
+			table{
+				border-collapse: collapse;
+				border: 1px solid white;
+			}
+			td{
+				width: 50px;
+				height: 50px;
+				background-color: #ccc;
+				
+			}
+			.show{
+				background-color: red;
+				
+			}
+			#start{
+				position: absolute;
+				width: 100px;
+				left: 0px;
+				top: 20px;
+			}
+			#num{
+				position: absolute;
+				width: 100px;
+				right: 0px;
+				top: 20px;
+				border: 1px solid red;
+				height: 30px;
+			}
+			table {
+				border-collapse: collapse;
+			}
+			td {
+				border: 1px solid red;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<div id="score">0</div>
+			<div id="num"></div>
+			<input type="button" name="start" id="start" value="开始" />
+			<table>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+	<script type="text/javascript">
+		//获取标签元素
+		var start = document.getElementById("start");
+		var score = document.getElementById("score");
+		var numHtml = document.getElementById("num");
+		var tds = document.getElementsByTagName("td");
+		//随机函数
+		function randomFunc(min,max){
+			return parseInt(Math.random()*(max - min) + min);
+		}
+		
+		var index = 0;
+		var num = 5;
+		var timer = null;
+		
+		start.onclick = function(){
+			//清除定时器
+			score.innerHTML = 0;
+			clearInterval(timer);
+			//循环定时器
+		  	timer =  setInterval(function(){
+		  		console.log(1)
+		  		num--;
+				//进行重置
+				for(var i = 0; i < tds.length;i++){
+					tds[i].className = "";
+					tds[i].isClick= false;
+				}
+				//随机位置
+				index = randomFunc(0,tds.length);
+				// 16
+				console.log(index)
+				tds[index].className = "show";    
+				numHtml.innerHTML = num;                                           
+				if(num<=0){
+					clearInterval(timer);
+					numHtml.innerHTML = "时间到";
+					for(var i = 0; i < tds.length;i++){
+						tds[i].className = "";
+						tds[i].isClick= false;
+					}
+					num = 5;
+				}
+			},1000);
+		}
+		/**
+		真与假：
+		真：true、非零数字、非空对象（document、window）、非空字符串
+		假：false、数字零、undefined、空对象（null）、空字符串
+		//&&  一假即为假,全真全为真
+		*/
+		for(var i = 0; i < tds.length;i++){
+			tds[i].onclick = function(){
+				// console.log(this.isClick)
+				
+				
+				console.log(this.isClick);
+				// this.className == "show"    true
+				// this.isClick  undefined   false == false   true
+				//  true && true  ==  true 
+				//  true && false  ==  false 
+				if(this.className == "show" && this.isClick == false){
+					//让计分板 + 1;
+					score.innerHTML = parseInt(score.innerHTML) + 1;
+				}
+				// //打完地鼠 做一个标识
+				this.isClick = true;
+				// console.log(this.isClick)
+				
+			}
+		}
+		
+		
+		
+	</script>
+</html>

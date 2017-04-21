@@ -1,0 +1,54 @@
+ 
+			<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+
+<script src="http://fe.xhanglu.com/lib/js/jquery.js"></script>
+</head>
+<body>
+<div class="check-hd">
+	<input type="checkbox" id="checkall" class="checkall"/>
+	<label for="checkall">全选</label>
+</div>
+<div class="check-bd">
+	<input type="checkbox" id="chec1" class="checkall"/>
+	<label for="chec1">菜单一</label>
+	<input type="checkbox" id="chec2" class="checkall"/>
+	<label for="chec2">菜单二</label>
+	<input type="checkbox" id="chec3" class="checkall"/>
+	<label for="chec3">菜单三</label>
+	<input type="checkbox" id="chec4" class="checkall"/>
+	<label for="chec4">菜单四</label>
+	<input type="checkbox" id="chec5" class="checkall"/>
+	<label for="chec5">菜单五</label>
+	<input type="checkbox" id="chec6" class="checkall"/>
+	<label for="chec6">菜单六</label>
+</div>
+<script>
+	$('#checka ll').click(function(){
+		if($(this).prop('checked')){
+			$('.check-bd').find('input').prop('checked',true);
+		}else {
+			$('.check-bd').find('input').prop('checked',false);
+		}
+	})
+	$('.check-bd').find('input').click(function(){
+		var len = $('.check-bd').find('input').length;
+		var len1 = $('.check-bd').find('input:checked').length;
+
+		if(!$(this).prop('checked')){
+			$('#checkall').prop('checked',false);
+		}
+		if(len1==len){
+			$('#checkall').prop('checked',true);
+		}
+	})
+</script>
+</body>
+</html>

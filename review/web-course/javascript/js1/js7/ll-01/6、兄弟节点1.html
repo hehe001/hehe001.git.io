@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+<p>sadfasdf</p>
+<ul id="list">
+	<li>li列表</li>
+	<li>li列表</li>
+	<li>li列表</li>
+	<li>li列表</li>
+</ul>
+<dl>
+	<dt>这是dt标签</dt>
+	<dd>这是dd标签</dd>
+</dl>
+<p>safdsdf</p>
+<script>
+	// nextElementSibling 下一个兄弟节点
+	//不兼容ie
+	//ie中使用 nextSibling
+	// previousElementSibling 上一个兄弟节点
+	//不兼容ie
+	//ie中使用 previousSibling
+	var oList = document.getElementById('list');
+	var next1 = oList.nextElementSibling; 
+	// priːviəs //sɪblɪŋ
+	var prev1 = oList.previousElementSibling; 
+	console.log(next1); // dl
+	console.log(prev1);
+
+	// nextSibling,previousSibling 但是在FF下，由于它会把标签之间的空格当成文本节点，所以为了准确地找到相应的元素，会用
+	// 封装 获取前一个节点
+	function prev(obj){
+        // if(!obj)return null;
+        return obj.previousElementSibling || obj.previousSibling;
+    };
+    prev(oList).style.border = '1px solid red';
+    console.log(prev(oList))
+    // 封装 获取下一个节点
+    function next(obj){
+        // if(!obj){return null};
+        return obj.nextElementSibling || obj.nextSibling;
+    };
+    var nt = next(oList);
+    nt.style.background = 'red';
+</script>
+</body>
+</html>

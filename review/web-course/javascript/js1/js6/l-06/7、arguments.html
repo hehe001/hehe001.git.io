@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+<script>
+/**
+	arguments : 可变参（不定参）
+     1，参数个数是不确定的。
+     2，与接收参数没有直接关系，可以不需要接收参数，但是如果修改接收参数的值，也会修改arguments里面存的值。
+     ps:虽然arguments对象并不是一个数组，但是访问单个参数的方式与访问数组元素的方式相同
+*/
+function arg(){
+	console.log(arguments)
+}
+arg('你好');
+arg(245,'你好');
+arg('你好',123,'adfdf');
+
+function testDemo(){
+	if(arguments.length===1){
+		console.log('此时只有一个参数')
+	}else if(arguments.length===2){
+		console.log('此时有两个参数')
+	}else {
+		// callee 它的作用是返回函数自身，callee 前面一定要加上arguments
+
+		console.log('不知道有几个参数了');
+		arguments.callee('9999');
+	}
+}
+testDemo('eeee');
+testDemo('111','ffff');
+testDemo('ooooo','dddd','dsfd');
+var index = 0;
+setTimeout(function(){
+	index++;
+	document.title = index;
+	setTimeout(arguments.callee,1000);
+},1000)
+</script>
+</body>
+</html>

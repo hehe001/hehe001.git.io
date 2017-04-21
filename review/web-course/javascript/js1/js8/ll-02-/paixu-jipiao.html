@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+ 	<style>
+ 	.clear{
+		clear:both;
+		height:0;
+		overflow:hidden;
+	}
+	.clearfix:after {
+		content:'.';
+		display:block;
+		height:0;
+		clear:both;
+		visibility:hidden;
+	}
+	.clearfix{*zoom:1;}
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+        li {
+            list-style: none;
+        }
+        .div{
+        	width:1000px;
+        	margin:0 auto;
+        	border:1px solid red;
+        }
+        .paixu{
+			border:1px solid red;
+        }
+        .paixu li{
+        	float:left;
+        	width:200px;
+        	text-align:center;
+        }
+        .qifei{
+        	float:left;
+        }
+        .qifei li{
+			width:200px;
+        	text-align:center;
+        }
+        .jiage{
+			float:left;
+        }
+        .jiage li{
+        	width:200px;
+        	text-align:center;
+        }
+    </style>
+</head>
+<body>	
+<div class="div clearfix">
+	<ol id="paixu" class="paixu clearfix">
+		<li>起飞时间</li>
+		<li>机票价格</li>
+	</ol>
+	<ul id="qifei" class="qifei">
+		<li time="1">8:00</li>
+		<li time="5">18:00</li>
+		<li time="2">10:00</li>
+		<li time="4">15:00</li>
+		<li time="3">13:00</li>
+	</ul>
+	<ul id="jiage" class="jiage">
+		<li price="2">3000</li>
+		<li price="5">8000</li>
+		<li price="1">2000</li>
+		<li price="4">5000</li>
+		<li price="3">4000</li>
+	</ul>
+</div>
+<script>
+	function attr(obj, attr, value){
+	    if(arguments.length==2){
+	        if(obj.attributes[attr]){
+	            return obj.attributes[attr].nodeValue;
+	        }else{
+	            return null;
+	        }
+	    }
+	    else if(arguments.length==3){
+	        obj.setAttribute(attr,value);
+	    }
+	};
+var oL = document.getElementById('paixu');
+var oLi = oL.children
+var uL1 = document.getElementById('qifei'); 
+var uLi1 = uL1.children
+var uL2 = document.getElementById('jiage'); 
+var uLi2 = uL2.children
+var bTrue = true;
+	oLi[0].onclick = function(){
+		var arr = [];
+		for(var i=0,len=uLi1.length;i<len;i++){
+			arr.push(uLi1[i]);
+		}
+		arr.sort(function(li1,li2){
+		 	if(bTrue){
+			 	return parseInt(attr(li1,'time'))-parseInt(attr(li2,'time'));
+			}else {
+		        return parseInt(attr(li2,'time'))-parseInt(attr(li1,'time'));
+		    }
+		})
+		for(var i=0;i<arr.length;i++){
+	        uL1.appendChild(arr[i]);
+	    }
+	    bTrue = !bTrue;
+	}
+	oLi[1].onclick = function(){
+		var arr = [];
+		for(var i=0,len=uLi2.length;i<len;i++){
+			arr.push(uLi2[i]);
+		}
+		arr.sort(function(li1,li2){
+			if(bTrue){
+			 	return parseInt(attr(li1,'price'))-parseInt(attr(li2,'price'));
+			}else {
+		        return parseInt(attr(li2,'price'))-parseInt(attr(li1,'price'));
+		    }
+		})
+		for(var i=0;i<arr.length;i++){
+	        uL2 .appendChild(arr[i]);
+	    }
+	    bTrue = !bTrue;
+	}
+</script>
+</body>
+</html>

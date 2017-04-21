@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+<div id="test">test</div>
+<script>
+	/**
+		removeAttribute(name)
+	*/
+	var id1 = document.getElementById('test');
+    id1.setAttribute('data','a=b&c=d');
+    console.log(id1.getAttribute('id'));
+    console.log(id1.getAttribute('data'));
+    id1.removeAttribute('data');
+    // console.log(id1.getAttribute('data'));
+</script>
+</body>
+</html>

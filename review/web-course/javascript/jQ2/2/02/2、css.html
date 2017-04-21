@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <script src="../jquery.js"></script>
+    <style>
+        .div-test {
+            width: 500px;
+            height: 400px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<div id="test">这是第一个div标签 </div>
+<div id="test1">1111</div>
+<p id="test2">dasdfs</p>
+<p id="test3">dasdfsssss</p>
+<div id="test4">asdfasdf
+    <p>adfa</p>
+    <span>sdaf</span>
+</div>
+<div id="test5">asdfasdf
+    <p>这是p标签</p>
+    <span class="span">这是第一个span 标签</span>
+    <span>这是第二个span 标签</span>
+</div>
+<script>
+    
+    $(function(){
+       $('#test').css('border','1px solid red');  // 设置css 样式
+       $('#test').css({  //  设置多个css 样式  推荐用法  *****
+            'width':'100px',
+            'height':'300px'
+       });
+       console.log($('#test').css('height'));   // 获取某一个css属性的值 ***
+
+       $('#test1').css({
+            "border":"1px solid red",
+            "height":function(index, value){  // 用的不多 **
+                    // 1:属性名
+                    // 2:此函数返回要设置的属性值。接受两个参数，index为元素在对象集合中的索引位置，value是原先的属性值。
+
+                    return parseInt(value)*2;
+            }
+       })
+    })
+</script>
+</body>
+</html>

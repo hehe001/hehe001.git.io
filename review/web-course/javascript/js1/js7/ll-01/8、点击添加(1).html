@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+        li {
+            list-style: none;
+        }
+        .div {
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .div-hd {
+            overflow: hidden;
+        }
+        .div-hd b {
+            float: left;
+            height: 26px;
+            line-height: 26px;
+        }
+        .div-hd span {
+            float: left;
+            margin-left: 5px;
+            height: 26px;
+            line-height: 26px;
+            border: 1px solid blue;
+        }
+        .div-hd span var {
+            float: left;
+            font-style: normal;
+            height: 26px;
+            line-height: 26px;
+            padding: 0 5px;
+        }
+        .div-hd span a {
+            float: left;
+            height: 10px;
+            width: 10px;
+        }
+        .div-bd {
+            height: 40px;
+            overflow: hidden;
+        }
+        .div-ft {
+            overflow: hidden;
+        }
+        .div-ft span {
+            float: left;
+            height: 30px;
+            line-height: 30px;
+            padding: 0 10px;
+            border: 1px solid blue;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="div">
+    <div class="div-hd" id="div-hd">
+        <b>未添加标签：</b>
+        <span><var>师哥多</var><a href="javascript:;">X</a></span>
+        <span><var>师哥多</var><a href="javascript:;">X</a></span>
+        <span><var>师哥多</var><a href="javascript:;">X</a></span>
+        <span><var>师哥多</var><a href="javascript:;">X</a></span>
+        <span><var>师哥多</var><a href="javascript:;">X</a></span>
+    </div>
+    <div class="div-bd"  id="div-bd">
+        <input type="text" value="">
+        <input type="button" value="添加">
+    </div>
+    <div class="div-ft"  id="div-ft">
+        <span>领导好</span>
+        <span>美女鑫</span>
+        <span>年底双薪</span>
+        <span>环境不错</span>
+    </div>
+</div>
+<script>
+
+    var divHd = document.getElementById('div-hd');
+    var divBd = document.getElementById('div-bd');
+    var divFt = document.getElementById('div-ft');
+    var oSpans = divHd.getElementsByTagName('span');
+    var oSpan = divFt.children;
+    var oInput = divBd.children;
+    function add(hl){
+        var span = document.createElement('span');
+        var vr = document.createElement('var');
+        var a = document.createElement('a')
+        a.href = 'javascript:;';
+        a.innerHTML = "X";
+        // a.onclick = function(){
+        //     divHd.removeChild(this.parentNode)
+        // }
+        for(var i=0,len=oSpans.length;i<len;i++){
+            if(oSpans[i].children[0].innerHTML==hl){
+                alert('已经添加过');
+                return;
+            }
+        }
+        vr.innerHTML = hl;
+        span.appendChild(vr);
+        span.appendChild(a);
+        divHd.appendChild(span);
+        bindCl();
+    }
+    for(var i=0,len=oSpan.length;i<len;i++){
+       oSpan[i].onclick = function(){
+            var hl = this.innerHTML;
+            add(hl)
+       }
+    }
+    oInput[1].onclick = function(){
+        var hl = oInput[0].value;
+        if(hl==''){
+            alert('请输入内容')
+            return;
+        }
+        add(hl)
+    }
+    function bindCl(){
+        for(var i=0,len=oSpans.length;i<len;i++){
+                oSpans[i].children[1].onclick = function(){
+                    var ind = 100;
+                    var obj = this.parentNode;
+                    var timer = null;
+                    var timer = setInterval(function(){
+                        ind-=10;
+                        obj.style.filter='alpha(opacity:'+ind+')';
+                        obj.style.opacity=ind/100;
+                        if(ind<=0){
+                            divHd.removeChild(obj);
+                            clearInterval(timer);
+                        }
+                    },50)
+                    
+            }
+        }
+    }
+    bindCl();
+
+</script>
+
+
+
+
+</body>
+</html>

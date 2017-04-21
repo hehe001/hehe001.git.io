@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+	// Math 对象
+	// Math 对象用于执行数学任务。
+	//random()  0 ~ 1之间的数
+	//0 ~ 10   
+	// var a = parseInt( Math.random() *10);
+	
+	//0~5
+	// var a = parseInt( Math.random() *5);
+	
+	// 5 ~ 10  ( 0 ~ 5 ) + 5 
+	// var a = parseInt( Math.random() *5) + 5;
+	// 5~10    （0 ~ 5 ）+5
+	// 10~15    （0 ~ 5 ）+10
+	//	Math.random() * (max - min ) + min; 
+	// console.log(parseInt( Math.random() *5) + 5)
+	//封装函数 
+	function randomFunc(min,max){
+		return parseInt(Math.random() * (max - min ) + min);
+	}
+	console.log(randomFunc(10,20))
+	// for(var i = 0 ; i < 10; i++){
+	// 	// console.log(randomFunc(10,20));
+	// }
+	 
+</script>
+</body>
+</html>

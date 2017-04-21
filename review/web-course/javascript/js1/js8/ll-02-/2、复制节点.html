@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+<input type="button" name="btn1" id="btn1" value="添加" />
+<ul id="ul1">
+	
+</ul>
+<input type="button" name="btn" id="btn" value="浅克隆" />
+<br/>
+<br/>
+<input type="button" name="btn" id="btn2" value="深克隆" />
+<script>
+	/**
+		cloneNode(boolean) : 复制一个节点
+        true：深复制，复制节点及其整个子节点树
+        false : 浅复制，只复制节点本身。
+        注意：cloneNode（）方法不会复制添加到DOM节点中的JavaScript属性，例如事件处理程序等。
+	*/
+	var btn1 =  document.getElementById("btn1");
+	var btn = document.getElementById("btn");
+	var cloneBtn1 = document.getElementById("btn2");
+	var ul1  =document.getElementById("ul1");
+	var i = 0;
+	btn1.onclick = function(){
+		i++;
+		//创建li 
+		var li = document.createElement("li");
+		var a = document.createElement("a");
+		li.innerHTML = "我是li"+i;
+		a.innerHTML = "test";
+		a.href = "javascript:;";
+		li.appendChild(a);
+		ul1.appendChild(li);
+	}
+
+	//克隆事件
+	var idIndex = 1;
+	btn.onclick = function(){
+		idIndex++;
+		//cloneNode(bool)  bool值如果给true 代表深克隆   给false代表浅克隆
+		var ul2 = ul1.cloneNode(false);
+		ul2.id = "ul" + idIndex;
+		//将ul2 添加到body
+		ul1.parentNode.appendChild(ul2);
+		
+	}
+	// 深克隆
+	cloneBtn1.onclick = function(){
+		idIndex++;
+		//cloneNode(bool)  bool值如果给true 代表深克隆   给false代表浅克隆
+		var ul2 = ul1.cloneNode(true);
+		ul2.id = "ul" + idIndex;
+		//将ul2 添加到body
+		ul1.parentNode.appendChild(ul2);
+		
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+    <style>
+	* {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        list-style: none;
+    }
+    .w {
+        width: 1000px;
+        margin: 0 auto;
+    }
+    .tab-nav {
+        height: 30px;
+        overflow: hidden;
+        border:1px solid red;
+    }
+    .tab-nav li {
+        float: left;
+        width: 60px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        margin-right: 10px;
+    }
+    .tab-nav .cur {
+        background: red;
+        color: #fff;
+    }
+    .tab-con div {
+        width: 500px;
+        height: 200px;
+        border: 1px solid red;
+
+    }
+    </style>
+</head>
+<body>
+<div class="w">
+    <ul class="tab-nav" id="tab-nav">
+        
+    </ul>
+    <div class="tab-con" id="tab-con">
+        <div>模块一</div>
+        <div>模块二</div>
+        <div>模块三</div>
+        <div>模块四</div>
+    </div>
+</div>
+<script>
+// 《无缝滚动》
+	// function css(obj,attr,value){
+	//     if(arguments.length===2){
+	//         if(obj.currentStyle){
+	//             return obj.currentStyle[attr];
+	//         }else {
+ //                return getComputedStyle(obj,false)[attr];
+ //            }
+	//     }else if(arguments.length===3){
+	//         obj.style[attr]=value;
+	//     }
+	// }
+	// function sildFn(n){
+	// 	var oUl = document.getElementById('uls');
+	//     var oLi = oUl.getElementsByTagName('li');
+	//     oUl.innerHTML+=oUl.innerHTML;
+	//     oUl.style.width = oLi[0].offsetWidth*oLi.length+'px';
+	//     var iSpeed = n;
+	//     var t = null;
+	//     oUl.onmouseover = function(){
+ //      		clearInterval(t);
+ // 		}
+ // 		oUl.onmouseout = function(){
+ //      		t = setInterval(sild,30)
+ //     	}
+ //     	function sild(){
+ // 			if(parseInt(css(oUl,'left'))<-oUl.offsetWidth/2){
+ //               	oUl.style.left = '0px';
+	//         }else if(parseInt(css(oUl,'left'))>0){
+ //               	oUl.style.left = -oUl.offsetWidth/2+'px';
+
+ //          	}
+ //      	 	oUl.style.left = parseInt(css(oUl,'left'))+iSpeed+'px';
+ //     	}
+ // 	 	t = setInterval(sild,30)
+	// }
+	// sildFn(4);
+// 《innerHTML》
+	// function addLi(){
+ //        var aBox = document.getElementById('tab-con').getElementsByTagName('div');
+ //        var aBtn = document.getElementById('tab-nav');
+ //        var iHtml = '';
+ //        for(var i=0,lens = aBox.length;i<lens;i++){
+ //            iHtml+='<li>第'+i+'块</li>';
+ //            // iHtml=iHtml+'<li>第'+i+'块</li>';
+ //        }
+ //        aBtn.innerHTML = iHtml;
+ //        console.log(aBtn.getElementsByTagName('li').length)
+ //    }
+ //    addLi();
+ //   function returnFn(){
+ //        return '给函数一个值';
+ //    }
+ //    var fn = returnFn();
+ //    console.log(fn)
+	// function rFn(){
+	// 	var a = 10;
+	// 	var b = 55;
+	// 	return a*b;
+	// }
+	// console.log(rFn());
+	// function rFn1(){
+ //        var a = 10;
+ //        var b = 55;
+ //        return a*b;
+ //        alert('你猜你能看到我吗？');
+ //        console.log('are you sure?')
+ //    }
+ //    console.log(rFn1())
+ //    function rFn2(){
+ //        var a = 10;
+ //        var b = 55;
+ //        a*b;
+ //    }
+ //    console.log(rFn2());
+ //     function rFn3(){
+ //        var a = 10;
+ //        var b = 55;
+ //        return;
+ //    }
+ //    console.log(rFn3());
+ //    function abc(){
+ //        console.log('正常使用，可以不用return');
+ //    }
+ //    abc();
+    function arg(){
+		console.log(arguments)
+	}
+	arg('你好');
+	arg(245,'你好');
+	arg('你好',123,'adfdf');
+</script>
+</body>
+</html>

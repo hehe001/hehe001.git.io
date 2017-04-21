@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+    <style>
+    div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid red;
+    }
+    </style>
+</head>
+<body>
+<div>
+    这是一个div
+</div>
+<script>
+    // 业务逻辑中很是重要
+    //?a=b&c=d  好多网址都是 url 是一个只是参数不同   
+    // 一般是一个?  后是是& 
+    //?kw=显卡&red_tag=r1772307567 
+    var oBody = document.getElementsByTagName('div')[0];
+    var url = location.href;  //获取网址
+    // console.log(location);// 整个url 对应参数 
+    // console.log(url);// 整个url 地址
+    // var url = 'a=b&d=c&safsdfad'
+    if(url.indexOf('a=b')>-1){
+        console.log('此参数存在，所以我要输出');
+        oBody.style.display = 'block';
+    }else {
+        console.log('这会没找到呀，所以我不会出现的');
+         oBody.style.display = 'none';
+    }
+</script>
+</body>
+</html>

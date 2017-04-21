@@ -1,0 +1,143 @@
+
+
+// .text {
+//     height:pxToRem(97);
+//     background:#00b459;
+//     // width: pxToRem(137);
+//     // height: pxToRem(97);
+//     // background: #00b459;
+//     // span {
+//     // 	float:left;
+//     // 	height:pxToRem(97);
+//     // 	padding-left:pxToRem(20);
+//     // 	line-height: pxToRem(97);
+//     // 	font-size: pxToRem(32);
+//     // 	color:#fff;
+//     // }
+//     span {
+//         float:left;
+//         height:pxToRem(97);
+//         font-size:pxToRem(32);
+//         color:#fff;
+//         padding-left:pxToRem(20);
+//         line-height:pxToRem(97);
+//     }
+// }
+// div {
+//     background:url(i/png) repeat-x 0 bottom;
+// }
+// .ul {
+//     display: flex;
+//     flex-direction: row;
+//     flex-wrap: wrap;
+//     padding:0 pxToRem(16);
+//     li {
+//         width:50%;
+//         box-sizing: border-box;
+//         padding:0 pxToRem(5);
+//         div {
+//             border:pxToRem(1) solid #ccc;
+//             height:pxToRem(232);
+//             dl {
+//                 dt {
+//                     float:left;
+//                     height:pxToRem(80);
+//                     width:pxToRem(80);
+//                     border-radius:50%;
+//                     background:red;
+//                     margin:pxToRem(40) 0 0 pxToRem(22);
+//                 }
+//                 dd {
+//                     margin-left:pxToRem(120);
+//                     overflow: hidden;
+
+//                 }
+//                 .dd1 {
+//                     padding-top: pxToRem(34);
+//                     height:pxToRem(41);
+//                     line-height:pxToRem(41);
+//                     b {
+//                         font-size: pxToRem(28);
+//                     }
+//                     span {
+//                         font-size: pxToRem(22);
+//                     }
+//                 }
+//                 .dd2 {
+//                     height:pxToRem(33);
+//                     line-height:pxToRem(33);
+//                     font-size: pxToRem(22);
+//                     padding:0 pxToRem(5) 0 0;
+//                     box-sizing: border-box;
+//                 }
+//                 .dd3 {
+//                     em {
+//                         box-sizing: border-box;
+//                         display: inline-block;
+//                         padding:pxToRem(5);
+//                         font-style: normal;
+//                         font-size: pxToRem(16);
+//                         background:red;
+//                         color:#fff;
+//                     }
+//                 }
+//             }
+//             p {
+//                 margin-top: pxToRem(29);
+//                 height:pxToRem(59);
+//                 line-height:pxToRem(59);
+//                 border-top:pxToRem(1) solid red;
+//                 span {
+//                     width:50%;
+//                     float:left;
+//                     box-sizing: border-box;
+//                     text-align:center;
+//                 }
+//                 var {
+//                     float:right;
+//                     width:pxToRem(1);
+//                     height:pxToRem(32);
+//                     margin-top: pxToRem(14);
+//                     background:red;
+//                 }
+//             }
+//         }
+//     }
+// }
+@import "mobile";
+// .text {
+//     height:pxToRem(98);
+//     background:green;
+//     span {
+//         float:left;
+//         height:pxToRem(98);
+//         line-height:pxToRem(98);
+//         color:#fff;
+//         padding-left:pxToRem(20);
+//     }
+//     em {
+//         float:right;
+//         height:pxToRem(98);
+//         line-height:pxToRem(98);
+//         color:#fff;
+//         padding-left:pxToRem(20);
+//     }
+//     div {
+//         background: red;
+//         margin-left:pxToRem(170);
+//         margin-right:pxToRem(170);
+//         height:50px;
+//     }
+// }
+.text {
+    height:pxToRem(98);
+    background:#00b459;
+    span {
+        font-size:pxToRem(32);
+        float:left;
+        height:pxToRem(98);
+        line-height:pxToRem(98);
+        color:#fff;
+        margin-left:pxToRem(20);
+    }
+}

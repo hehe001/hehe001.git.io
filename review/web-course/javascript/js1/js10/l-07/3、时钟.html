@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+    <style>
+    #timer {font-size:24px;}
+    </style>
+</head>
+<body>
+<div id="timer">
+	<img src="images/0.png"/>
+	<img src="images/0.png"/>
+	时
+	<img src="images/0.png"/>
+	<img src="images/0.png"/>
+	分
+	<img src="images/0.png"/>
+	<img src="images/0.png"/>
+	秒
+</div> 
+<script>
+	//charAt() 方法可返回指定位置的字符。
+	// images/0.png
+	// 'images/' +n+'.png'
+    var str1="Hello world!";
+    document.write(str1.charAt(4));
+	function sLen(num){
+		if(num<10){
+			return '0' + num;
+		}else {
+			return '' + num;
+		}
+	}
+	function timer(){
+		var oImg = document.getElementById('timer').getElementsByTagName('img');
+		var oDate = new Date();
+		//oDate.getHours()
+		//oDate.getMinutes()
+		//oDate.getSeconds()
+		var str = sLen(oDate.getHours())+sLen(oDate.getMinutes())+sLen(oDate.getSeconds());
+		console.log(str)
+		var arr1 = str.split('');
+		console.log(arr1)
+		// oImg[0].src = 'images/'+arr1[0]+'.png';
+		// 10 01 25  
+		// 00 00 00
+		// console.log(str.charAt(3))
+		for(var i=0;i<oImg.length;i++){
+			// oImg[i].src = 'images/'+str.charAt(i)+'.png';
+			oImg[i].src = 'images/'+arr1[i]+'.png';
+		}
+	}
+	timer();
+	setTimeout(function(){
+		timer();
+		setTimeout(arguments.callee,1000)
+	},1000)
+	
+</script>
+</body>
+</html>

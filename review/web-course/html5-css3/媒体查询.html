@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keyword" content="新航路师徒学院 js"/>
+    <meta name="description" content="新航路师徒学院"/>
+
+    <meta name="viewport" content="initial-scale=1,width=device-width,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="address=no">
+
+
+	<link rel="stylesheet" type="text/css" href="style-a.css" media="screen and (min-width: 500px)">
+	<!-- 意思是当屏幕的宽度大于等于500px的时候，应用style-a.css -->
+	<link rel="stylesheet" type="text/css" href="style-b.css" media="screen and (min-width: 550px)">
+	<!-- 意思是当屏幕的宽度大于等于550px的时候，应用style-b.css -->
+	<link rel="stylesheet" type="text/css" href="style-c.css" media="screen and (min-width: 600px) and (max-width: 750px)">
+	<!-- 意思是当屏幕的宽度大于600小于800时，应用style-c.css -->
+	<style type="text/css">
+		/*当屏幕尺寸小于600px时，应用下面的CSS样式*/ 
+
+		@media screen and (max-width: 600px) {
+			.class { 
+		 		background: red;
+		 		font-size: 40px;
+		 	} 
+		 	a {
+
+		 	}
+		 	p {
+
+		 	}
+		}
+		/* 
+			screen:显示器、笔记本、移动端等设备;
+			写法是前面加@media，其它跟link里的media属性相同
+			其实基本上就是样式覆盖~，判断设备，然后引用不同的样式文件覆盖。
+			not: not是用来排除掉某些特定的设备的，比如 @media not print（非打印设备）、
+			only: 用来定某种特别的媒体类型。对于支持Media Queries的移动设备来说，如果存在only关键字，移动设备的Web浏览器会忽略only关键字并直接根据后面的表达式应用样式文件。对于不支持Media Queries的设备但能够读取Media Type类型的Web浏览器，遇到only关键字时会忽略这个样式文件。
+			all: 所有设备，这个应该经常看到
+		*/
+	</style>
+</head>
+<body>
+<div class="class">
+	adfasfasf
+</div>
+<h1>
+意思是当屏幕的宽度大于600小于800时，应用style-c.css
+</h1>
+</body>
+</html> 

@@ -1,0 +1,31 @@
+{
+  "host": "172.16.32.2",
+  "user": "web",
+  "password": "webjyt",
+  "projectPath": "jyt/h5",
+  "serverDir": "s",
+  "previewServerDir": "page",
+  "widgetServerDir":"widget",
+  "cdn": "",
+  "newcdn": "",
+  "outputCustom": "",
+  "build":{
+    "livereload":true,
+    "sass":true,
+    "less":false,
+    "csslint":false
+  },
+  "output":{
+    "cssImagesUrlReplace": false,
+    "cssCombo": false,
+    "jsCombo": false,
+    "combineWidgetCss":true,
+    "compressPng":false,
+    "compressCss":true,
+    "cssSprite":true,
+    "cssSpriteMargin":5,
+    "base64": true,
+    "imagesSuffix":0
+  },
+  "localServerPort": 8082
+}

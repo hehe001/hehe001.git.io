@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+<script>
+	/**
+		1、节点类型
+			childNodes;
+			nodeType
+			标签节点：1  可以使用nodeName查看标签名
+			文本节点：3  回车是文本节点
+			注释节点：８
+		2、子节点
+			children：所有是标签类型的子节点	
+			// 一组
+		3、父节点
+			parentNode
+		4、兄弟节点
+			兼容写法
+			function prev(obj){
+				//  ie  previousSibling     ff 标准：previousElementSibling
+		        return obj.previousElementSibling || obj.previousSibling;
+		    };
+		    function next(obj){
+		        return obj.nextElementSibling || obj.nextSibling;
+		    };
+		5、第一个 ，最后一个  节点
+			function first(oParent){
+		        return oParent.firstElementChild || oParent.firstChild;
+		    };
+		    function last(oParent){
+		        return oParent.lastElementChild || oParent.lastChild;
+		    };  
+		6、创建标签
+			//创建标签 createElement()
+			// createElement("标签名") : 创建新元素
+			var li = document.createElement('a');   
+		7、添加子节点
+			//appendChild()  
+			//添加子标签 appendChild()
+			// appendChild() 在最后面添加子节点	 
+		8、添加子节点
+			//insertBefore(newElement,targetElement);
+			//将新的子节点newElement 
+			//添加到指定子节点targetElement之前	  
+		9、移除父节点的某个子节点
+			// oList.removeChild(li);
+			// oList.removeChild(a.parentNode);
+		10、替换节点
+			//replaceChild(newNode,oldNode) 将新的子标签newNode 替换掉指定的子标签oldNode
+	*/
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+    <style>
+		.class {
+			border: 1px solid red;
+			width: 100px;
+			height: 100px;
+		}
+    </style>
+</head>
+<body>
+<div id="test" class="tesst"></div>
+<script>
+    function haveClass(obj,className){
+        // if(!obj){return false}
+        var objClass = obj.className;
+        //  div 有没有class  没有  是false 
+        //  if(){}else {}
+        if(!objClass){
+            return false;
+        }
+        var allName = objClass.split(' ');
+        var res = false;
+        for(var i=0,len = allName.length;i<len;i++){
+            if(allName[i] == className){
+                res = true;
+                break;
+            }
+        }
+        return res;
+    }
+    // var oDiv = document.getElementById('test');
+    // console.log(haveClass(oDiv,'test'));
+    // // || 一真即为真,全假才为假
+	function addClass(obj,name){
+        console.log(name)
+        if(haveClass(obj,name)){
+            return null;
+        }
+        console.log(name+'1')
+        if(obj.className!==''){
+            obj.className += ' ';
+            obj.className += name;
+        }else{
+            obj.className = name;
+        }
+    }
+    var oDivd = document.getElementById('test');
+    addClass(oDivd,'tesst');
+	
+</script>
+</body>
+</html>

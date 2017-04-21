@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    <title>盒阴影</title>
+    <style>
+        * {
+            margin: 0;padding:0;
+        }
+        .box {
+            width:1000px;
+            margin: 20px auto 0;
+            border: 1px solid red;
+            padding: 30px;
+        }
+        p {
+            width:300px;
+            margin: 0 auto;
+            height: 300px;
+            background:#eee;
+        }
+        /**
+            类型    水平  垂直   模糊    扩展    颜色
+            E {
+box-shadow:inset x-offset y-offset blur-radius spread-radius color}
+            即：
+            对象选择器 {box-shadow:投影方式 X轴偏移量 Y轴偏移量 阴影模糊半径 阴影扩展半径 阴影颜色}
+            inset 投影方式
+            此参数是一个可选值，如果不设值，其默认的投影方式是外阴影;如果取其唯一值“inset”, 其投影就是内阴影;
+            x-offset
+            水平方向的偏移量;
+            y-offset
+            垂直方向的偏移量;
+            blur-radius模糊半径
+            可选，只能为整数，值越大阴影就越模糊;
+            spead-radius扩展半径
+            可选，可以为正数或者负数，如果为负数，整个阴影将会缩小;
+            color阴影颜色
+            可选，如果不设定值，浏览器将会采用其默认色，默认色一般是黑色。
+            一般我们很少用到inset和spead-radius这两个属性，如果运用好这两个属性可以制作出
+            好了，CSS3中box-shadow内容就给大家介绍到这里了。希望大家继续关注我们的网站!
+        */
+        .p1 {
+            /*
+                默认 三个值时 第三个值为模糊半径
+            */
+            /* 第三个数值代表阴影模糊半径，如果省略就没有模糊效果，扩展半径默认就是有的 */
+            /* -webkit-box-shadow: 3px 1px 9px rgba(0,0,0,1);
+            -moz-box-shadow: 3px 1px 9px rgba(0,0,0,1); */
+            background: #fff;
+            box-shadow: 0 0 9px red;
+            /* box-shadow: -3px 0 3px rgba(213, 213, 213, .25), 3px 0 3px rgba(213, 213, 213, .25), 0 -3px 3px rgba(213, 213, 213, .25), 0 3px 3px rgba(213, 213, 213, .25) */
+        }
+        .p2 {
+            /*
+                四个边不同值
+            */
+            /* -webkit-box-shadow:0 -3px 5px blue,3px 0 5px yellow,0 3px 5px red,-3px 0 5px green;
+            -moz-box-shadow:0 -3px 5px blue,3px 0 5px yellow,0 3px 5px red,-3px 0 5px green; */
+            box-shadow:0 -3px 5px blue,3px 0 5px yellow,0 3px 5px red,-3px 0 5px green;
+        }
+        .p3 {
+            /*
+                哪个颜色在上
+            */
+            /*如果前面的阴影模糊值小于后面的阴影模糊值，那么前面的显示在后面之上，
+            如果前面阴影的模糊值大于后面的阴影模糊值，那么前面的阴影将遮住后面的阴影效果。*/
+            box-shadow: 0 0 5px red,0 0 15px blue;
+            /* box-shadow: 0 0 15px red,0 0 5px green; */
+        }
+        .p4 {
+            /*
+            四边具有相同的阴影效果（只设置阴影模糊半径和阴影颜色）
+            */
+            box-shadow:0 0 5px red;
+        }
+        .p5 {
+            /*
+                四边具有相同的阴影（只设置阴影扩展半径和阴影颜色）
+                类似边框
+            */
+            box-shadow:0 0 0 1px green;
+            /* http://www.th7.cn/web/html-css/201409/57906.shtml */
+        }
+        .p6 {
+            /*
+                内阴影inset效果
+            */
+            box-shadow: inset 0 0 10px red;
+        }
+        .p7{
+            -webkit-box-shadow: inset 0 0 10px blue;
+            -moz-box-shadow: inset 0 0 10px blue;
+            box-shadow: inset 0 0 10px blue;
+            display: inline-block;
+        }
+        .p7 img{
+            position:relative;
+            z-index:-1;
+            display: block;
+        }
+        .p8 {
+            position: relative;
+            display: inline-block;
+            *display: inline;
+        }
+        .p8:before {
+            content:"";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -moz-box-shadow:inset 0 0 10px 1px blue;
+            -webkit-box-shadow: inset 0 0 10px 1px blue;
+            box-shadow: inset 0 0 10px 1px blue;
+        }
+        .p8 img {
+            display: block;
+        }
+        .p9{
+            width: 300px;
+            height: 150px;
+            position: relative;
+            background: #ccc;
+
+
+        }
+        .p9:before,.p9:after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            bottom: 15px;
+            left: 10px;
+            width: 50%;
+            height: 20%;
+            /*add box-shadow*/
+            -webkit-box-shadow: 0 15px 10px rgba(125,125,125,0.8);
+            -moz-box-shadow: 0 15px 10px rgba(125,125,125,0.8);
+            box-shadow: 0 15px 10px rgba(125,125,125,0.8);
+            /*add css3 transform*/
+            -webkit-transform: rotate(-3deg);
+            -moz-transform: rotate(-3deg);
+            -o-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+        }
+        .p9:after {
+            right:10px;
+            left: auto;
+            -webkit-transform:rotate(3deg);
+            -moz-transform:rotate(3deg);
+            -o-transform:rotate(3deg);
+            transform:rotate(3deg);
+        }
+    </style>
+
+<link type="text/css" rel="stylesheet" href="//misc.360buyimg.com/jdf/1.0.0/unit/??ui-base/1.0.0/ui-base.css,shortcut/2.0.0/shortcut.css,myjd/2.0.0/myjd.css,global-footer/1.0.0/global-footer.css,service/1.0.0/service.css">
+</head>
+<body>
+<div class="box">
+    <p class="p1">盒阴影：默认 三个值时 第三个值为模糊半径</p>
+</div>
+
+<div class="box">
+    <p class="p2">盒阴影：四个边不同值</p>
+</div>
+
+<div class="box">
+    <p class="p3">盒阴影：哪个颜色在上</p>
+</div>
+
+<div class="box">
+    <p class="p4">盒阴影：只设置阴影模糊半径和阴影颜色</p>
+</div>
+
+<div class="box">
+    <p class="p5">盒阴影：只设置阴影扩展半径和阴影颜色</p>
+</div>
+<div class="box">
+    <p class="p6">盒阴影：内阴影inset效果</p>
+</div>
+<div class="box">
+    <div class="p7">
+        <img src="images/fill.gif" alt="图片阴影"/>
+    </div>
+</div>
+<div class="box">
+    <div class="p8">
+        <img src="images/fill.gif" alt="图片阴影"/>
+    </div>
+</div>
+<div class="box">
+    <div class="p9">
+    </div>
+</div>
+</body>
+</html>

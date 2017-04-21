@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>  
+    <title>js三</title>
+    <meta name="keywords" content="新航路教育、HTML5、前端开发、HTML5培训"/>
+    <meta name="description" content="新航路教育"/>
+    <link rel="stylesheet" href="" id="teste">
+    <style>
+	</style>		
+</head>
+<body>
+<input type="button" value="点击" id="btn"/>
+<div id="test"></div>
+<script>
+// 《分支语句2》
+// var num1 = 10;
+// if(num1  > 0){ 
+//     console.log("为真");
+// }
+   var oBtn = document.getElementById('btn');
+   var bTure = false;
+   var num = 1;
+   oBtn.onclick = function(){
+      if(bTure){
+          alert('怎么不弹呢');
+          bTure = false;
+      }else {
+          alert('可以弹');
+          bTure = true;
+      }
+       // if(num==1){
+       //     alert('是1呀');
+       //     num=2;
+       // }else if(num==2){
+       //     alert('又变成2了呀');
+       //     num=3;
+       // }else if(num==3) {
+       //     alert('是3吗？');
+       //     num=4;
+       // }else {
+       //    alert('ssss');
+       // }
+   };
+// 《定时器》
+    // var index = 0;
+    // var num = 0;
+    // var timer = null;
+    // var oDiv = document.getElementById('test');
+    // var oBtn = document.getElementById('btn');
+    // timer = setInterval(function(){
+    //     index = index+1;
+    //     oDiv.innerHTML = index;
+    // },1000);
+    // oBtn.onclick = function(){
+    //     clearInterval(timer);
+    // }
+    // setTimeout(function(){
+    //     num++;
+    //     document.title = num;
+    //     setTimeout(arguments.callee,1000)
+    // },1000)
+// 《分支语句》
+// var oBtn = document.getElementById('btn');
+// var bTure = false;
+// var num = 12;
+//  oBtn.onclick = function(){
+//       if(bTure){
+//           alert('怎么不弹呢');
+//           bTure = false;
+//       }else {
+//           alert('可以弹');
+//           bTure = true;
+//       }
+//       if(num==1){
+//            alert('是1呀');
+//            num=2;
+//        }else if(num==2){
+//            alert('又变成2了呀');
+//            num=3;
+//        }else if(num==3) {
+//            alert('是3吗？');
+//            num=4;
+//        }else {
+//           alert('ssss');
+//        }
+//    };
+// 《全局变量》
+ //    var a;
+	// function f1(){
+ //        a = 27;
+ //        // console.log('你好'+a);
+ //    }
+ //    function f2 (){
+ //        a = 28;
+ //        // console.log('函数f2中'+a);
+ //    }
+ //    f1();
+ //    f2();
+ //    console.log(a);
+ // 《局部变量》
+    // var a;
+    // function f1(){
+    //     var a = 27;
+    //     console.log('函数f1中'+a);
+    // }
+    // function f2 (){
+    //     var a = 55;
+    //     console.log('函数f2中'+a);
+    // }
+    // f1();
+    // f2();
+// 《检测数据类型》
+    // a = function(){
+    //     console.log('函数');
+    // }
+    // console.log(typeof a);
+// 《数据类型转换》
+    // 1.强制类型
+    // var bTrue1= true;
+    // var bTrue2= false;
+    // var bc = Number(bTrue2);
+    // console.log(bc);
+    // console.log(Number(bTrue1));
+    // var num = 2222222;
+    // console.log(Number(num));
+     // console.log(Number(null));
+     // console.log(Number(undefined));
+// 《parseFloat》   
+    // var test = '123liuliqing';
+    // console.log(parseFloat(test));
+    // var test2 = 12.2;
+    // console.log(parseFloat(test2));
+    // var test3 = '52.33xqh21';
+    // console.log(parseFloat(test3));
+    // var test4 = 12.23333333;
+    // toFixed() 保留几们小数点
+    // console.log(parseFloat(test4).toFixed(4));
+// 《NaN》  
+    // console.log(NaN == NaN );// false
+    // console.log(isNaN(10));
+    // console.log(isNaN('10'));
+    // console.log(isNaN(NaN));
+    // // console.log(NaN/100);
+    // console.log(isNaN('Taching'));
+    // console.log(isNaN(true));
+// 《运算符关系》   
+    // var num1 = 100;
+    // var num2 = 59;
+    // var isTrue = num1 > num2;
+    // console.log(isTrue);
+    // console.log(num1 < num2);
+    // console.log(num1 >= num2);
+    // console.log(num1 <= num2);
+    // var num = 5;
+        
+    // console.log(num == "5");
+    // var num11 = 5;
+    // console.log(num11 === "5");
+    // var isT = 3;
+    // console.log(isT != 4);  
+// 《隐式转换》 
+    // var num = 5;
+    // console.log(5 == "5");
+    // console.log(5 === "5");  
+    // var str1 = '444';
+    // var str2 = '333';
+    // console.log(str1+str2); 
+    // console.log(parseInt(str1)+parseInt(str2)); 
+    // console.log(str1-str2);
+    // console.log(str1/str2);
+    // console.log(str1*str2);
+
+    // ！isTrue为“非“false”,所以输出为“true”
+    // isTrue = false;
+    // console.log(!isTrue); 
+    </script>
+</body>
+</html>

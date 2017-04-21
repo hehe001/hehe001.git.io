@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>元素获取</title>
+    <meta name="keywords" content="新航路教育、HTML5、前端开发、HTML5培训"/>
+    <meta name="description" content="新航路教育"/>
+    <style>
+	p b {
+		border: 1px solid red;
+	}
+	.alert-box {
+		position: fixed;
+		width: 200px;
+		height: 300px;
+		left: 50%;
+		top: 50%;
+		margin: -150px 0 0 -100px;
+		display: none;
+		background: red;
+	}
+	body {
+		height: 1200px;
+		background: #ccc;
+	}
+    </style>
+</head>
+<body>
+<input type="button" id="btn" value="点我点我"/>
+<div id="div1" class="alert-box">
+	<a href="#">点我关闭</a>
+</div>
+
+<script>
+	// 点击出现弹层
+	var oBtn = document.getElementById("btn");
+	var oBox = document.getElementById('div1');
+	var oClose = oBox.getElementsByTagName('a')[0];
+	oBtn.onclick = function(){
+		oBox.style.display = 'block';
+	}
+	oClose.onclick = function(){
+		oBox.style.display = 'none';
+	}
+</script>
+</body>
+</html>

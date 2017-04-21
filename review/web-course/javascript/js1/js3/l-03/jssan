@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路教育、HTML5、前端开发、HTML5培训"/>
+    <meta name="description" content="新航路教育"/>
+    <link rel="stylesheet" href="" id="teste">
+    <style>
+	</style>		
+</head>
+<body>
+<script>
+	var a;
+    function f1(){
+        a = 27;
+        var b = 36;
+        console.log('你好'+a);
+    }
+</script>
+</body>

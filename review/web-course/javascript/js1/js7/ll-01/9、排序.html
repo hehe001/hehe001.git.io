@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+        li {
+            list-style: none;
+        }
+        .div {
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .div-hd {
+            overflow: hidden;
+            height: 30px;
+            border-bottom: 1px solid #ccc;
+        }
+        .div-hd li {
+            float: left;
+            height: 30px;
+            width: 80px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .div-bd li {
+            height: 100px;
+            margin-top: 10px;
+            border: 1px solid red;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="div">
+    <ol class="div-hd" id="div-hd">
+        <li>时间排序</li>
+        <li>价钱排序</li>
+    </ol>
+    <ul class="div-bd" id="div-bd">
+        <li price="3">这是li1,价钱是3</li>
+        <li price="12">这是li2,价钱是12</li>
+        <li price="4">这是li3,价钱是4</li>
+        <li price="5">这是li4,价钱是5</li>
+        <li price="99">这是li5,价钱是99</li>
+    </ul>
+</div>
+<script>
+function attr(obj, attr, value){
+    if(arguments.length==2){
+        if(obj.attributes[attr]){
+            return obj.attributes[attr].nodeValue;
+        }else{
+            return null;
+        }
+    }
+    else if(arguments.length==3){
+        obj.setAttribute(attr,value);
+    }
+};
+var divHd = document.getElementById('div-hd');
+var divBd = document.getElementById('div-bd');
+var aLi1 = divHd.children;
+var aLi2 = divBd.children;  
+var bTrue = true;
+aLi1[0].onclick = function(){
+    var arr = [];
+    for(var i=0,len=aLi2.length;i<len;i++){
+        // arr[i] = aLi2[i];
+        arr.push(aLi2[i]);
+    }
+    arr.sort(function(li1,li2){
+        if(bTrue){
+            return parseInt(attr(li1,'price'))-parseInt(attr(li2,'price'));
+        }else {
+            return parseInt(attr(li2,'price'))-parseInt(attr(li1,'price'));
+        }
+    })
+    for(var i=0;i<arr.length;i++){
+        divBd.appendChild(arr[i]);
+    }
+    bTrue = !bTrue;
+}
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

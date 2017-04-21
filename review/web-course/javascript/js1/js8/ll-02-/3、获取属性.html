@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+<div id="test" bcd="asdfasd" span="1000" test="测试1" class="class" data="这是什么">test</div>
+<script>
+	/**
+		getAttribute(name)：获取节点上name属性的值
+	*/
+	var id1 = document.getElementById('test');
+    console.log(id1.getAttribute('data'))
+    console.log(id1.getAttribute('class'))
+    console.log(id1.id)
+    console.log(id1.className)
+    // 自定义属性 建议方法
+    // console.log(id1.getAttribute('abc'))
+    // var data = id1.getAttribute('data');
+    // console.log(data)
+</script>
+</body>
+</html>

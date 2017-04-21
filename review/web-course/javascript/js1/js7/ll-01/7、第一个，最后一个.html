@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+<p>sadfasdf</p>
+<ul id="list">
+	<li>li列表</li>
+	<li>li列表</li>
+	<li>li列表</li>
+	<li>li列表---</li>
+</ul>
+<dl>
+	<dt>这是dt标签</dt>
+	<dd>这是dd标签</dd>
+</dl>
+<script>
+	//firstElementChild/lastElementChild 
+	//获取第一个子标签/最后一个子标签  
+	//不兼容ie 
+	//ie的是 firstChild/lastChild
+	var oList = document.getElementById('list');
+	oList.firstElementChild.style.border = '1px solid red';
+	oList.lastElementChild.style.border = '1px solid blue';
+	// 封装 获取第一个子标签
+    function first(oParent){
+        if(!oParent)return null;
+        return oParent.firstElementChild || oParent.firstChild;
+    };
+    first(oList).style.fontSize = '50px';
+    // 封装 获取最后一个子标签
+    function last(oParent){
+        if(!oParent)return null;
+        return oParent.lastElementChild || oParent.lastChild;
+    };
+    last(oList).style.width = '250px';
+</script>
+</body>
+</html>

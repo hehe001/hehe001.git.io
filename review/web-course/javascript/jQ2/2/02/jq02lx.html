@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <script src="jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .test{
+            width:200px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="点击事件" id="btn"/>
+<div id="test">
+    <ul>
+        <li>
+            <span>这是什么1</span>
+        </li>
+        <li>
+            <span>这是什么2</span>
+        </li>
+        <li>
+            <span>这是什么3</span>
+        </li>
+        <li>
+            <span>这是什么4</span>
+        </li>
+        <li><em>adsfasf</em></li>
+        <li>
+            <a href="javascript:;">点a</a>
+        </li>
+    </ul>
+</div>
+<script>
+    $(function(){
+        $("#btn").on("click", function(){
+            alert('1');
+        })
+        $("#test").on('click','span',function(){
+            var _this = $(this);
+            console.log(_this.html());
+            $("#test").off('click','span')
+        }).on('click','a',function(){
+            alert('2')
+        }).css({
+            'width':'',
+            'height':''
+        }).find('a').css({
+            "fontSize":"30px"
+        });  
+
+    })                
+
+</script>
+</body>
+</html>

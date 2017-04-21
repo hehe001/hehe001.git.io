@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>元素获取</title>
+    <meta name="keywords" content="新航路教育、HTML5、前端开发、HTML5培训"/>
+    <meta name="description" content="新航路教育"/>
+    <style>
+/*	p b {
+		border: 1px solid red;
+	}*/
+	input {
+		width: 100px;
+		height: 30px;
+		font-size: 30px;
+		border: 1px solid red;
+	}
+	/*.alert-box {
+		width: 200px;
+		height: 300px;
+		border: 1px solid red;
+		background: red;
+		display: none;
+	}*/
+    </style>
+</head>
+<body>
+<input type="button" id="btn" value=""/>
+<div id="div1" class="alert-box">
+	
+</div>
+
+<script>
+	var oBtn = document.getElementById('btn');
+	setTimeout(function(){
+		// alert('哈哈，记得QQ空间那用眼盯着看，然后阿的一声')
+	},5000);
+	var index = 100;
+	setInterval(function(){
+		index--;
+		oBtn.value = index;
+		console.log(index)
+	},1000)
+</script>
+</body>
+</html>

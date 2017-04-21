@@ -1,0 +1,82 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+        li {
+            list-style: none;
+        }
+        input {
+            height: 40px;
+            width: 300px;
+            border: 1px solid red;
+            padding: 0 10px;
+        }
+        .par {
+            width: 300px;
+            height: 300px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="par" id="div2">
+    <input type="button" value="" id="test"/>
+</div>
+<script>
+    /**
+        由给事件绑定一个方法,出了上边讲过的以外,还可以使用 addEventListener 来给标签 对应的事件添加方法,使用之前的那种方式,只能给事件绑定一个方法,而使用 addEventListener 则可以给一个事件添加多个方法
+    */
+    /**
+    	//标准
+		target.addEventListener(type,listener,useCapture); 
+		target: 文档节点、document、window 或 XMLHttpRequest。 type: 字符串,事件名称,不含“on”,比如“click”、“mouseover”、“keydown”等。 
+		listener :实现了 EventListener 接口或者是 JavaScript 中的函数。 
+		useCapture :是否使用捕捉,一般用 false 。(事件执行顺序是正序)
+    */
+    /**
+    	// ie
+		target.attachEvent(type, listener); 
+		target :文档节点、document、window 或 XMLHttpRequest。
+
+		 type :字符串,事件名称,含“on”,比 
+		如“onclick”、“onmouseover”、“onkeydown”等。
+		listener :实现了 EventListener 接口或者是 JavaScript 中的函数。
+    */
+    var oInput = document.getElementById("test");
+    oInput.onclick = function(){
+        alert('1')
+    }
+    oInput.onclick = function(){
+        alert('2')
+    }
+    oInput.addEventListener('click',function(){
+    	alert('7777');
+    },false);
+    oInput.addEventListener('click',function(){
+        alert('哇');
+    },false);
+    function addEvent(obj,type,fn){
+    	// obj.addEventListener(type,fn,false) || obj.attachEvent('on'+type,fn) 
+	     if(obj.addEventListener){
+	          obj.addEventListener(type,fn,false);
+	     }else {
+	         obj.attachEvent('on'+type,fn);
+	     }
+	}
+	addEvent(oInput,'click',function(){
+		alert('adsfasdfad');
+	})
+</script>
+</body>
+</html>

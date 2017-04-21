@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+
+<script>
+	//创建Date
+	//获取当前时间  
+
+	var date1 = new Date();
+	console.log('时间默认：'+date1); 
+	//获取年份 getFullYear()
+	var year = date1.getFullYear();
+	//	alert(year);
+	//获取月份 getMonth()  范围0~11
+	var month = date1.getMonth();
+	//	alert(month + 1);
+	//获取月份中天
+	var monthDay = date1.getDate();
+	console.log('获取月中天：'+monthDay);
+	//一周中的某一天
+	var weekDay = date1.getDay();
+	//小时
+	var hour = date1.getHours();
+	//分钟
+	var minute = date1.getMinutes();
+	console.log('获取分钟：'+minute);
+	//秒
+	var seconds = date1.getSeconds();
+
+	//1970年1月1日
+	//getTime()函数的返回值为Number类型，返回当前Date对象所表示的时间距1970年1月1日午夜的毫秒数。
+	var time = date1.getTime();
+	var date2 = new Date(2017,1,11);
+	console.log(time+"==="+date2.getTime());
+	// weekDay    周一  1 周二 是2  周三 3  周六 6  周日  0
+	var arrDay = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+	var dateStr = year + "年" + (month + 1) + "月" + monthDay + "日" + hour + "时" + minute + "分" + seconds + "秒";
+	document.write(dateStr+"<br/>");		
+	document.write(arrDay[weekDay]+"<br/>");		
+</script>
+</body>
+</html>

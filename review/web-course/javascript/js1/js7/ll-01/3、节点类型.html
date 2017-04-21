@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+<div id="div1">a
+	<!--哈哈哈-->
+	b<div>我是div1</div>c
+	d<div>我是div2</div>e
+	f<div>我是div3</div>g
+h</div>
+<script>
+	// 节点类型
+	/*	
+		标签属于节点的一种
+		节点是包含了标签、注释、文本、doctype等在内的多种组合。
+ 		nodeType属性，用于表明节点的类型。
+ 	*/
+ 	/*
+		标签节点：1  可以使用nodeName查看标签名
+		文本节点：3  回车是文本节点
+		注释节点：８
+ 	*/
+	var div1 = document.getElementById("div1");
+	//childNodes 获取所有的子节点
+	var divs = div1.childNodes;
+	console.log(divs.length)
+	for(var i = 0; i < divs.length;i++){
+		//nodeValue 获取节点的值
+		//nodeType 获取节点的类型  //  用的最多   判断是一
+		//nodeName 获得 body 元素的节点名称：
+		//1  标签类型的节点
+		//3  文本节点
+		//8  注释 
+		if(divs[i].nodeType==1){
+			divs[i].style.border = "1px solid red";
+		}
+		console.log(divs[i].nodeType);
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+    <style>
+		#test {
+			border: 1px solid red;
+			width: 100px;
+			height: 100px;
+		}
+		#test:after{
+			content: "";
+			display: block;
+			height: 10px;
+			width: 50px;
+			border: 1px solid red;
+		}
+    </style>
+</head>
+<body>
+<div id="test">
+	asdfasf
+</div>
+<script>
+// style 只能获取 style 设置的 样式 ，无法获取非行间样式
+var oDiv = document.getElementById('test');
+console.log(oDiv.style.border);//无法获取到
+//  获取 非行间的样式
+console.log(getComputedStyle(oDiv,false)['border']);
+function css1(obj,attr){
+	if(obj.currentStyle){
+           return obj.currentStyle[attr];// ie 有效
+           return obj.currentStyle[attr];// ie 有效
+      }else {
+           // return getComputedStyle(obj,':after')[attr];
+           return getComputedStyle(obj,false)[attr]; // 火狐及标准浏览器有效
+      }
+}
+// css1(oDiv,'height');
+console.log(css1(oDiv,'display'))
+
+// 设置样式
+function css(obj,attr,value){
+     if(arguments.length===2){
+          if(obj.currentStyle){
+               return obj.currenStyle[attr];
+          }else {
+               return getComputedStyle(obj,false)[attr];
+          }
+     }else if(arguments.length===3){
+          obj.style[attr]=value;
+     }
+}
+css(oDiv,'width','500px');
+</script>
+</body>
+</html>

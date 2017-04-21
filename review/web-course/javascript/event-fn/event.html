@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    <meta name="author" content="新航路教育 - www.xhanglu.com" />
+    <meta name="copyright" content="新航路教育 - www.xhanglu.com" />
+    <title>新航路教育 - www.xhanglu.com</title>
+    <meta name="keywords" content="新航路教育、HTML5、前端开发、HTML5培训"/>
+    <meta name="description" content="新航路教育"/>
+    <link rel="stylesheet" href="/css/index.css"/>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/sea.js"></script>
+    <script type="text/javascript" src="/js/vue.js"></script>
+    <style>
+        .m {
+            width: 500px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+<div class="m">
+    <h2>javascript</h2>
+    <div id="div1">
+        <ul>
+            <li>这是列表</li>
+            <li>这是列表</li>
+            <li>这是列表</li>
+            <li>这是列表</li>
+        </ul>
+    </div>
+    <h2>jquery</h2>
+    <div id="div2">
+        <ul>
+            <li>这是列表</li>
+            <li>这 <span>sadfsdf</span>   是列表</li>
+            <li>这是列表</li>
+            <li>这是列表</li>
+        </ul>
+    </div>
+    <h2>VUE</h2>
+    <div id="example" class="m">
+        <div class="test">
+        <span v-on:click="subFormEvent()">这是正常操作</span><br/>
+        <span v-on:click="subForm($event)">这是传了event对象</span>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    // 事件 js 
+    function addEvent(obj,type,fn){
+        if(obj.addEventListener){
+            obj.addEventListener(type,fn,false);
+        }else {
+            obj.attachEvent('on'+type,fn);
+        }
+    }
+    // 《addEvent(obj,type,fn)解决on的兼容性问题 obj：元素，type：事件类型, fn:方法》
+    var oDiv = document.getElementById('div1');
+    addEvent(oDiv,'click',function(ev){
+        var oEvent = ev || window.event;
+        console.log(oEvent.type)
+        var oTarget = oEvent.target || oEvent.srcElement;
+        console.log(oTarget)
+        console.log(oTarget.tagName)
+    })
+    // jquery 中
+    $('#div2').on('click','span',function(event){
+        console.log(event.type)
+        console.log(event.target)
+        console.log(event.currentTarget)
+        console.log(this)
+        // event.currentTarget  这句就相当于 原生的js
+        var obj = event.currentTarget;
+        $(obj).css({
+            "border":"1px solid red"
+        })
+    })
+    // 不管是js  还是jquery 都有通过方法 来获取事件对象
+    var vm = new Vue({
+        el:'#example',
+        data:{
+            model: {
+                // 复选框需要单独定义一个空数组
+                checkedNames:[]
+            }
+        },
+        methods:{
+            subFormEvent:function(ev){
+                // 原生
+                var oEvent = ev || window.event;
+                var oTarget = oEvent.target || oEvent.srcElement;
+                console.log(oTarget)
+                // 但使用jquery 之后 就不需要处理这些兼容性了
+                // 但vue 中又无法像 jquery 一样 直接使用 
+                // 所以看 subForm
+            },
+            subForm:function(event){
+                // 通过页面中 v-on:click="subForm($event)"  直接传入 $event
+                // 就可以和jquery 一样使用了
+               console.log(event.type)
+                console.log(event.target)
+                console.log(event.currentTarget)
+                var obj = event.currentTarget;
+                $(obj).css({
+                    "border":"1px solid red"
+                })
+                $(obj).parents(".test").css({
+                    "border":"1px solid red"
+                })
+            }
+        }
+    })
+</script>
+</body>
+</html>

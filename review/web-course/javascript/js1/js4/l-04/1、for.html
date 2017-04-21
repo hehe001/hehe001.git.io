@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+    <style>
+        #btn {
+            height: 40px;
+            overflow: hidden;
+        }
+        li {
+            list-style: none;
+        }
+        #btn li {
+            height: 38px;
+            line-height: 38px;
+            float: left;
+            border: 1px solid red;
+            margin-right: 20px;
+        }
+        #btn li.cur {
+            background-color: red;
+        }
+        #box div {
+            width:200px;
+            display: none;
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<ul id="btn">
+    <li class="cur">菜单一</li>
+    <li>菜单三</li>
+    <li>菜单二</li>
+</ul>
+<div id="box">
+    <div style="display:block;">模块一</div>
+    <div>模块二</div>
+    <div>模块三</div>
+</div>
+<script type="text/javascript">
+    // var arr = [1,2,3,4,5,6,7,8];
+    // for(var i= 0,len=arr.length;i<len;i++){
+    //     console.log(i);
+    // }
+    var oBtnParent = document.getElementById('btn');
+    var oBtn = oBtnParent.getElementsByTagName('li');
+
+
+    var oBoxParent = document.getElementById('box');
+    var oBox = oBoxParent.getElementsByTagName('div');
+    // for(定义一个初始值;比较;++)
+    //     var i = 0;i<3;i++ 
+
+   
+    for(var i= 0,len=oBtn.length;i<len;i++){
+        oBtn[i].index = i;
+        oBtn[i].onclick = function(){
+            for(var j=0,lens=oBox.length;j<lens;j++){
+                oBtn[j].className='';
+                oBox[j].style.display = 'none';
+            };
+            oBtn[this.index].className='cur';
+            oBox[this.index].style.display = 'block';
+        };
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+    <style>
+    #box{padding:20px;background:gray;}
+	#inp{width:300px;height:16px;line-height:16px;padding:3px;}
+    </style>
+</head>
+<body>
+<input id="btn" type="button" value="点击开始倒计时"/>
+<input id="inp" value="2017,3,8">
+<div id="box"></div>
+<script>
+	var oBox = document.getElementById('box');
+	var btn = document.getElementById('btn');
+	var dateValue;
+	var will = null;
+	var times = null;
+
+	var t = null;
+	function djs(){
+		var now = new Date();
+		var nowTime = now.getTime();
+		// 1000毫秒， 一分钟=60秒  一小时=60分钟  一天=24小时
+		// console.log((times - nowTime)/1000/60/60/24)
+		var iDayTime = (times - nowTime)/1000/60/60/24;
+		// console.log(iDayTime)
+		var day = parseInt(iDayTime);
+		// iDayTime  -day  剩余的时间  多少小时
+		var iHourTime = (iDayTime - day)*24;
+		// console.log(iHourTime)
+		var hour = parseInt(iHourTime);
+		// iHourTime  -hour  剩余的时间  多少分钟
+		var iMinutesTime = (iHourTime - hour)*60;
+		var minutes = parseInt(iMinutesTime);
+		// iMinutesTime  -minutes  剩余的时间  多少秒
+		var iSecondsTime = (iMinutesTime-minutes)*60;
+		var seconds =  parseInt(Math.ceil(iSecondsTime));
+		/**
+		// Math 对象
+		// Math 对象用于执行数学任务。
+		◎Math.ceil()执行向上舍入，即它总是将数值向上舍入为最接近的整数；
+		◎Math.floor()执行向下舍入，即它总是将数值向下舍入为最接近的整数；
+		◎Math.round()执行标准舍入，即它总是将数值四舍五入为最接近的整数(这也是我们在数学课上学到的舍入规则)。
+		*/
+		oBox.innerHTML = '距离'+dateValue+'还有'+day+'天'+hour+'小时'+minutes+'分'+seconds+'秒<br/>'+now.toLocaleString();
+		// toLocaleString  转换本地时间
+	}
+
+	btn.onclick = function(){
+		dateValue = document.getElementById('inp').value.split(',');
+
+		will = new Date(dateValue[0],dateValue[1]-1,dateValue[2]);
+		  // new Date(2017,2,5)
+		times = will.getTime();
+		t = setInterval(djs,1000);
+	}
+</script>
+</body>
+</html>

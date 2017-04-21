@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+
+<script>
+    //valueOf() 方法可返回 Boolean 对象的原始值
+    // Array：返回数组对象本身
+    var array = ["CodePlayer", true, 12, -5];
+    document.write( array.valueOf() === array ); // true
+    document.write('<br/>');
+    // Date：当前时间距1970年1月1日午夜的毫秒数
+    var date = new Date(2016, 7, 18, 23, 11, 59, 230);
+    document.write( date.valueOf() ); // 1471533119230
+    document.write('<br/>');
+    // Number：返回数字值
+    var num =  15.26540;
+    document.write( num.valueOf() ); // 15.2654
+    document.write('<br/>');
+    // 布尔：返回布尔值true或false
+    var bool = true;
+    document.write( bool.valueOf() === bool ); // true
+    document.write('<br/>');
+    // new一个Boolean对象
+    var newBool = new Boolean(true);
+    // valueOf()返回的是true，两者的值相等
+    document.write( newBool.valueOf() == newBool ); // true
+    document.write('<br/>');
+    // 但是不全等，两者类型不相等，前者是boolean类型，后者是object类型
+    document.write( newBool.valueOf() === newBool ); // false
+    document.write('<br/>');
+    // Function：返回函数本身
+    function foo(){
+    }
+    document.write( foo.valueOf() === foo ); // true
+    document.write('<br/>');
+    var foo2 =  new Function("x", "y", "return x + y;");
+    document.write( foo2.valueOf() === foo2 ); // true
+    document.write('<br/>');
+    // Object：返回对象本身
+    var obj = {name: "新航路", age: 18};
+    document.write( obj.valueOf() === obj ); // true
+    document.write('<br/>');
+    // String：返回字符串值
+    var str = "http://www.xhanglu.com";
+    document.write( str.valueOf() === str ); // true
+    document.write('<br/>');
+    // new一个字符串对象
+    var str2 = new String("http://www.xhanglu.com");
+    // 两者的值相等，但不全等，因为类型不同，前者为string类型，后者为object类型
+    document.write( str2.valueOf() === str2 ); // false
+</script>
+</body>
+</html>

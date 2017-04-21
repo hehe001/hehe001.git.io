@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>元素获取</title>
+    <meta name="keywords" content="新航路教育、HTML5、前端开发、HTML5培训"/>
+    <meta name="description" content="新航路教育"/>
+    <style>
+	input {
+		width: 100px;
+		height: 30px;
+		border: 1px solid red;
+	}
+	.alert-box {
+		width: 200px;
+		height: 300px;
+		border: 1px solid red;
+		background: red;
+		display: none;
+	}
+    </style>
+</head>
+<body>
+<input type="button" id="btn" value="点我点我"/>
+<div id="div1" class="alert-box">
+	
+</div>
+
+<script>
+	// 点击出现弹层
+	var oBtn = document.getElementById("btn");
+	var oBox = document.getElementById('div1');
+	function showDiv(){
+		if(oBox.style.display == 'block'){
+			// 是代码
+			oBox.style.display = "none";
+		}else {
+			// 不是代码
+			oBox.style.display = "block";
+		}
+	}
+	oBtn.onclick = function(){
+		showDiv();
+	}
+</script>
+</body>
+</html>

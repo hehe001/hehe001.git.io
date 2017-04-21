@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+        li {
+            list-style: none;
+        }
+        input {
+            height: 40px;
+            width: 300px;
+            border: 1px solid red;
+            padding: 0 10px;
+        }
+        .par {
+            width: 300px;
+            height: 300px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div class="par" id="div2">
+    <input type="button" value="" id="test"/>
+</div>
+<script>
+    /**
+        子标签发生事件后,向父级发送该事件,一直追溯到document。
+        如:点击一个嵌套在 body中的button,则该button的onclick事件也会传递给body、document中,触发他们 的onclick里触发的函数。
+    */
+    /**
+        由于事件冒泡会触发绑定在父标签上的同类型事件,会给我们的开发带来很多麻烦, 所以我们需要取消事件冒泡。取消事件冒泡的方法:把 cancelBubble 的值设置为 true
+    */
+    /**
+        stopPropagation的作用跟cancelBubble是一样的．都是用来阻止浏览器默认的事件冒泡行为．
+        他们的不同之处是:stopPropagation符合W3C标准．适用于FireFox等浏览器，不支持IE.
+        而cancelBubble方法不符合W3C的标准．且只支持IE浏览器
+    */
+    var oInput = document.getElementById('test');
+    var oDiv = document.getElementById('div2');
+
+    oInput.onclick = function(ev){
+        var oEvent = ev || window.event;
+        alert('1');
+        // oEvent.stopPropagation();
+        // oEvent.cancelBubble = true;
+    }
+    oDiv.onclick = function(ev){
+        var oEvent = ev || window.event;
+        alert('我是div');
+        oEvent.stopPropagation ? oEvent.stopPropagation() : (oEvent.cancelBubble=true);
+    }
+    document.onclick = function(){
+        alert('我是docuemt')
+    }
+</script>
+</body>
+</html>

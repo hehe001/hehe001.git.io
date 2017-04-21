@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+<input type="button" value="点击" id="btn"/>
+<script type="text/javascript">
+    var num1 = 10;
+    //if 语句
+    /*
+        * if(条件表达式){
+        *   语句1;
+        * }
+        * 如果条件表达式为真,执行语句1
+     */
+    if(num1  > 0){ 
+        console.log("为真");
+    }
+    
+    //if ... else
+    /*
+        * if(条件表达式){
+        *      语句1;
+        * } else{
+        *      语句2;
+        * }
+        * 如果条件表达式为真,执行语句1,否则执行语句2
+     */
+    if(num1 < 0){
+      console.log("为真!");
+    }else{
+      console.log("为假!");
+    }
+    //联级式
+    /*
+        * if(条件表达式1){
+        *   语句1;
+        * }else if(条件表达式2){
+        *   语句2;
+        * }else {
+        *   语句3;
+        * }
+        * 如果条件表达式1为真,执行语句1，如果条件表达式2为真,执行语句2 
+        * 否则 执行语句3
+     */
+    if(num1 < 5){
+      console.log("小于5");
+    }else if(num1 < 10){
+      console.log("num1 在 5 到 10之间");
+    }else {
+      console.log("大于等于10");
+    }
+    
+    //判断奇数 偶数
+    
+    var num2 = 36;// 取模
+    if(num2 % 2 == 0){
+      console.log("偶数");
+    }else {
+      console.log("奇数");
+    }
+    
+    //过 7
+    //7的倍数  num % 7 ==0 
+    //十位含7  num>=70 && num<=79
+    //个位含7  num % 10 == 7
+    var num = 21;
+    if(num%7==0  || (num >= 70 && num <= 79) || num%10 ==7){
+      console.log("过");
+    } else{
+      console.log(num);
+    }
+    
+    
+    //求两个数的最大值
+    var a = 10;
+    var b = 20;
+    //条件运算符 三目运算符
+    //表达式1 > 表达式2 ? 表达式3 : 表达式4;
+    //如果表达式1>表达式2 成立, 选择表达式3作为整个表达式的值
+    //如果不成立  选择表达式4作为整个表达式的值
+    var max = a > b ? a : b;
+    console.log(max);
+    
+    var min = a < b ? a : b;
+    console.log(min);
+    
+
+</script>
+</body>
+</html>

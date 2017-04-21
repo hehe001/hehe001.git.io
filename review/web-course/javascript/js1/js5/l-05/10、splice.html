@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+
+<script>
+    //splice() 方法用于插入、删除或替换数组的元素
+    //arrayObject.splice(index,howmany,element1,.....,elementX)
+    /*
+        index
+        必需。规定从何处添加/删除元素。
+        该参数是开始插入和（或）删除的数组元素的下标，必须是数字。
+         howmany
+         必需。规定应该删除多少元素。必须是数字，但可以是 "0"。
+         如果未规定此参数，则删除从 index 开始到原数组结尾的所有元素。
+         element1	可选。规定要添加到数组的新元素。从 index 所指的下标处开始插入。
+         elementX	可选。可向数组添加若干元素。
+    */
+   var arr = [1,2,3,4,5];
+   document.write(arr + "==========");// 1,2,3,4,5
+   // 插入一个元素
+   // arr.splice(2,0,999);
+   // 替换一个元素
+   // arr.splice(2,1,888);
+   // 删除一个元素
+   arr.splice(3,1);
+   document.write(arr);
+</script>
+</body>
+</html>

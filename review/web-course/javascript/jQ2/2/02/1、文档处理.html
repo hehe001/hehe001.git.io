@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <script src="../jquery.js"></script>
+    <style>
+        .div-test {
+            width: 500px;
+            height: 400px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<div id="test">11111111</div>
+<div id="test1">这是id等于test1的div</div>
+<p id="test2">dasdfs</p>
+<p id="test3">dasdfsssss</p>
+<div id="test4">asdfasdf
+    <p>adfa</p>
+    <span>sdaf</span>
+</div>
+<div id="test5">asdfasdf
+    <p>这是p标签</p>
+    <span class="span">这是第一个span 标签</span>
+    <span>这是第二个span 标签</span>
+</div>
+<script>
+    // jQueryappend
+    // 向每个匹配的元素内部追加内容。
+    // 这个操作与对指定的元素执行(appendChild)方法，将它们添加到文档中的情况类似。
+
+
+    // jQueryappendTo  把一个元素添加到 指定元素中
+
+
+    // jQueryempty 删除匹配的元素集合中所有的子节点。
+
+    // jQueryremove从DOM中删除所有匹配的元素
+    $(function(){
+        $("#test1").appendTo("#test"); //添加到元素后   == 用的多   *****
+        $("#test").append("<i>Hello</i>"); //添加到元素后   == 用的多   *****
+        // $("#test").prepend("<i>Hello</i>");  // 添加到元素前   
+        // $('#test2').appendTo('#test1');// 把元素添加到指定元素中   === 用的多   *****
+        // $('#test3').prependTo('#test1');// 把元素添加到指定元素中 前
+
+        // $('#test4').empty();  // 清空元素中的子节点 及元素  *****
+
+        // $("#test5 p").remove(); // 把对应的元素给删除掉
+        // $('span').remove('.span');  // 括号中可以对应增加选择器 
+    })
+</script>
+</body>
+</html>

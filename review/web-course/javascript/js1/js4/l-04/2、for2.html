@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        ul {
+            width: 500px;
+            margin: 0 auto;
+            border: 1px solid red;
+        }
+        ul li {
+            width: 500px;
+            overflow: hidden;
+        }
+        ul li span {
+            float: left;
+            width: 30px;
+            height: 60px;
+            line-height: 60px;
+            display: none;
+            width: 40px;
+            text-align: center;
+        }
+        ul li b {
+            display: none;
+            margin-left: 50px;
+            height: 25px;
+            line-height: 24px;
+        }
+        ul li p {
+            margin-left: 10px;
+        }
+        ul li.sp {
+            background: #ccc;
+            margin: 10px 0;
+        }
+        ul li.sp span{
+            display: block;
+        }
+        ul li.sp p{
+            margin-left: 50px;
+            height: 25px;
+            line-height: 24px;
+        }
+        ul li.sp b{
+            display: block;
+            
+        }
+    </style>
+</head>
+<body>
+<ul id="list">
+    <li class="sp">
+        <span>1</span>
+        <p>这是正常状态下的文字</p>
+        <b>2016</b>
+    </li>
+    <li>
+        <span>1</span>
+        <p>这是正常状态下的文字</p>
+        <b>2016</b>
+    </li>
+    <li>
+        <span>1</span>
+        <p>这是正常状态下的文字</p>
+        <b>2016</b>
+    </li>
+    <li>
+        <span>1</span>
+        <p>这是正常状态下的文字</p>
+        <b>2016</b>
+    </li>
+    <li>
+        <span>1</span>
+        <p>这是正常状态下的文字</p>
+        <b>2016</b>
+    </li>
+</ul>
+<script type="text/javascript">
+    var oList = document.getElementById('list');
+    var oLis = oList.getElementsByTagName('li');
+    for(var i=0,len=oLis.length;i<len;i++){
+        oLis[i].onmouseover = function(){
+            // this 0 li 
+            // this 1 li 
+            for(var j=0,len1=oLis.length;j<len1;j++){
+                oLis[2].className = '';
+            }
+            this.className = 'sp';
+        }
+    }
+</script>
+</body>
+</html>

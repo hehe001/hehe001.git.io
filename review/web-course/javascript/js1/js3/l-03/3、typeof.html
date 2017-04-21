@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+<input type="button" id="btn"/>
+<script type="text/javascript">
+    var a = 27;
+    console.log(typeof a);// number
+
+    a = 'test';
+    console.log(typeof a);// String
+
+    a = false;
+
+    console.log(typeof a);// boolean
+    var b;
+    console.log(typeof c); // undefined;
+    console.log(typeof b); // undefined;
+    
+    // * undefined
+    // * 真的就没定义
+    // * 定义了但并未赋值
+    // * 
+
+    a = function(){
+        console.log('函数');
+    }
+    // a()
+    console.log(typeof a);// function
+
+    a = document.getElementById('btn');
+    console.log(typeof a);// object
+
+    // //  null
+    var car = null
+    console.log(typeof car);
+
+    // 不确定时可以定义为null 
+    // 据体见定时器
+
+</script>
+</body>
+</html>

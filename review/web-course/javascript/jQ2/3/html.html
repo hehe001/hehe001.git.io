@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <script src="../jquery.js"></script>
+    <!-- <script src="//fe.xhanglu.com/lib/js/jquery.js"></script> -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .row {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<input type="text" value="">
+<div id="div"></div>
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+<script>
+    $(function(){
+        var rawData = {
+            "_id" : "129",
+            "name": "test",
+            "sex" : "男",
+            "age" : "29",
+            "avatar": "/asets/images/img.png",
+            "birthday": "1988-04-09",
+            "constellation":"",
+            "zodiac":"",
+            "city_live" : {
+                "province" : "北京",
+                "city" : "昌平"
+            },
+            "city_birth" : {
+                "province":"北京",
+                "city":"东城区"
+            },
+            "resigned" : "true",
+            "telephone" : "13611171158",
+            "email":"llqfront@gmail.com",
+            "work_experience" : "10年以上",
+            "intent": [
+                {
+                    industry: '请选期望行业',
+                    position: '期望职位：',
+                    area_province: 'area_province',
+                    area_city: 'area_city',
+                    salary: 'salary',
+                    production: 'production',
+                    sell_mode: ['arrMode','arrMode','arrMode'],
+                    business_trip: '期望工作地区'
+                }
+            ],
+            "language": [
+                {
+                    category:'英语',
+                    listen: '听力',
+                    speak: '口语',
+                    read: '阅读',
+                    write: '写作'
+                },
+                {
+                    category:'英语',
+                    listen: '听力',
+                    speak: '口语',
+                    read: '阅读',
+                    write: '写作'
+                }
+            ],
+            "work_history": [
+                {
+                    company:'新航路一',
+                    position:'职位名称',
+                    start_year:'开始时间',
+                    end_year:'线束时间：',
+                    sales_type:'职位类型',
+                    reportto:'汇报对象：',
+                    subordinate:'下属人数：',
+                    desc:'业绩描述：',
+                    sales_year:'年销售额：',
+                    finish_rate:'目标完成率：',
+                    productions:'产品：',
+                    sell_target:'销售对象：',
+                    sell_mode:'销售方式：',
+                },
+                {
+                    company:'新航路二',
+                    position:'职位名称',
+                    start_year:'开始时间',
+                    end_year:'线束时间：',
+                    sales_type:'职位类型',
+                    reportto:'汇报对象：',
+                    subordinate:'下属人数：',
+                    desc:'业绩描述：',
+                    sales_year:'年销售额：',
+                    finish_rate:'目标完成率：',
+                    productions:'产品：',
+                    sell_target:'销售对象：',
+                    sell_mode:'销售方式：',
+                }
+            ],
+            "edu_history": [
+                {
+                    school:'学校名称：',
+                    major:'专业名称：',
+                    level:'学历',
+                    start_year:'开始时间',
+                    end_year:'线束时间：'
+                },
+                {
+                    school:'学校名称：',
+                    major:'专业名称：',
+                    level:'学历',
+                    start_year:'开始时间',
+                    end_year:'线束时间：'
+                }
+            ],
+            "train":[
+                {
+                    name:'培训名称：',
+                    rog:'培训机构：',
+                    start_year:'开始时间',
+                    end_year:'线束时间：'
+                },
+                {
+                    name:'培训名称：',
+                    rog:'培训机构：',
+                    start_year:'开始时间',
+                    end_year:'线束时间：'
+                }
+            ]
+        }
+        var str = 'sdfasfd';
+        $('#div').html(str);
+        var ihtml = $('<p>这是创建一个元素</p>');
+        // 可以正常文档操作
+        // ihtml.css({
+        //     "border":"1px solid red"
+        // })
+        // 添加
+        $('#div1').append(ihtml);
+        // var stttt = '<div><p>asdfasdf</p></div>';
+        // 定义多行html 通过\  来换行
+        var str1 = '<div class="pop-item-box">\
+            <h4>\
+                <i></i>\
+                <span>1111新的标签'+str+'</span>\
+            </h4>\
+            <p><a href="javascript:;" class="sure">确认</a><a href="javascript:;" class="cancel">取消222</a></p>\
+            </div>';
+        $('#div2').html(str1);
+        var workpr = rawData.work_history;
+        var wk = {
+            company:'新航路三',
+            position:'职位名称',
+            start_year:'开1111始时间',
+            end_year:'线束时间：',
+            sales_type:'职位类型',
+            reportto:'汇报对象：',
+            subordinate:'下属人数：',
+            desc:'业绩描述：',
+            sales_year:'年销售额：',
+            finish_rate:'目标完成率：',
+            productions:'产品：',
+            sell_target:'销售对象：',
+            sell_mode:'11111销售方式：',
+        }
+        for(var key in workpr){
+            // console.log(workpr[key])
+        }
+        console.log(workpr.push(wk))
+        // 选取到当前 下标 是第一个 li 中的 编辑操作
+        // 然后直接对应修改
+        workpr[2].company = '新航路师徒学院'
+        console.log(workpr);
+        workpr.splice(2,1)
+        // $.each(workpr,function(key,val){
+        //     console.log(val.company)
+        //     if(val.company=='新航路二'){
+        //         // console.log(val)
+        //         workpr[key] = workpr[2];
+        //         workpr.pop();
+        //         // 相当于break
+        //         return false;
+        //     }
+        // });
+        console.log(workpr);
+        var strs = '';
+        $.each(workpr,function(key,val){
+            strs += '<div class="row">\
+            <h5>'+key+'</h5>\
+            <h3>'+val.company+'</h3>\
+            <p>'+val.position+'</p>\
+            <span>'+val.start_year+'</span>\
+            <var>'+val.sell_mode+'</var>\
+            </div>';
+        })
+        $('#div3').html(strs);
+    })
+</script>
+</body>
+</html>

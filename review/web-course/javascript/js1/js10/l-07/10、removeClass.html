@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+        li {
+            list-style: none;
+        }
+        .div {
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .div-hd {
+            overflow: hidden;
+            height: 30px;
+            border-bottom: 1px solid #ccc;
+        }
+        .div-hd li {
+            float: left;
+            height: 30px;
+            width: 80px;
+            text-align: center;
+            line-height: 30px;
+        }
+        .div-bd li {
+            height: 100px;
+            margin-top: 10px;
+            border: 1px solid red;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="div">
+    <ol class="div-hd cccc ddd" id="div-hd">
+        <li>时间排序</li>
+        <li>价钱排序</li>
+    </ol>
+    <ul class="div-bd" id="div-bd">
+        <li price="3">这是li1,价钱是3</li>
+        <li price="12">这是li2,价钱是12</li>
+        <li price="4">这是li3,价钱是4</li>
+        <li price="5">这是li4,价钱是5</li>
+        <li price="99">这是li5,价钱是99</li>
+    </ul>
+</div>
+<script>
+    function removeClass(obj,name){
+        if(!obj){return null;}
+        var sClass = obj.className;
+        var aClass = sClass.split(' ');
+        for (var i=0,length=aClass.length;i<length;i++ ){
+            if(name == aClass[i]){
+                // 如果传进来的值等于  数组中的某一个值的时候
+                // 我们就把最后一值 赋值给那个要找的class值
+                // 再通过 pop 方法 把最后一个值删掉（因为重复了吗）
+                aClass[i] = aClass[length-1];
+                aClass.pop(aClass[length-1]);
+                break;
+            }
+        }
+        // join  数组转 字符串
+        obj.className = aClass.join(' ');
+    }
+    function removeClass2(obj,name){
+        if(!obj){return null;}
+        var sClass = obj.className;
+        var aClass = sClass.split(' ');
+        for (var i=0,length=aClass.length;i<length;i++ ){
+            if(name == aClass[i]){
+                aClass.splice(i,1)
+                break;
+            }
+        }
+        // join  数组转 字符串
+        obj.className = aClass.join(' ');
+    }
+var obj = document.getElementById('div-hd');
+removeClass2(obj,'div-hd')
+
+</script>
+</body>
+</html>

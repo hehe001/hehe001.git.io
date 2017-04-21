@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+	function setTime(){
+		//获取date
+		var date1 = new Date();
+		var year = date1.getFullYear();
+		var month = date1.getMonth() + 1;
+		var day = date1.getDate();
+		var hour = date1.getHours();
+		var minute = date1.getMinutes();
+		var seconds = date1.getSeconds();
+		var dateStr = year + "年" + month + "月" + day + "日" + hour + "时" + minute + "分" + seconds + "秒";
+		document.getElementById("div1").innerHTML = dateStr;
+	}
+	setTime();
+	// setTimeout(function(){
+	// 	setTime();
+	// 	setTimeout(arguments.callee,1000);  
+	// },1000);
+	setInterval(function(){
+		setTime();
+	},1000);
+</script>
+</body>
+</html>

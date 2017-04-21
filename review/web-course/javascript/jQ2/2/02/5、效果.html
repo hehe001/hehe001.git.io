@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <script src="../jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        input {
+            /* display: none; */
+        }
+        #list {
+            display: none;
+        }
+        .hide {
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+        .list {
+            border: 1px solid red;
+
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="点击事件" id="btn"/>
+<p id="test-p">这是p标签</p>
+<div id="test" class="list hide">
+    <ul>
+        <li>
+            <span>这是什么1</span>
+        </li>
+        <li>
+            <span>这是什么2</span>
+        </li>
+        <li>
+            <span>这是什么3</span>
+        </li>
+        <li>
+            <span>这是什么4</span>
+        </li>
+    </ul>
+</div>
+<div id="btn1">点击这个div</div>
+<ul id="list" style="background:red;display:block;width:50px;position: absolute;">
+    <li>这是向下效果</li>
+    <li>sdfa</li>
+    <li>sdfa</li>
+    <li>sdfa</li>
+</ul>
+<div id="btn2">点击这个div2</div>
+<ul id="list2">
+    <li>这是向上效果</li>
+    <li>sdfa</li>
+    <li>sdfa</li>
+    <li>sdfa</li>
+</ul>
+<script>
+    
+    $(function(){
+        // setTimeout(function(){
+        //     $('#test').fadeIn('slow')
+        // },3000);
+        // $("#btn").toggle(
+        //   function () {
+        //     $('#test').addClass("selected");
+        //   },
+        //   function () {
+        //     $('#test').removeClass("selected");
+        //   }
+        // );
+        // // speed:三种预定速度之一的字符串("slow","normal", or "fast")或表示动画时长的毫秒数值(如：1000)
+        // $('#test').show('slow',function(){
+        //     setTimeout(function(){
+        //         $("#test-p").hide();
+        //     },1000)
+        // })
+        // // slideDown
+        // // 通过高度变化（向下增大）来动态地显示所有匹配的元素，在显示完成后可选地触发一个回调函数。
+
+        $('#btn1').click(function(){
+            // $('#list').fadeIn(3000)
+            $("#list").animate({ 
+                width: "330px",
+                height: "100px", 
+                fontSize: "16px",
+                left:"50px"
+              }, 3000 );
+            setTimeout(function(){
+                $("#list").stop(true)
+            },500)
+        })
+        // $('#btn2').click(function(){
+        //     // $('#list2').fadeOut('slow')
+        // })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+
+<script>
+    //split() 方法用于把一个字符串分割成字符串数组
+
+    /* 两个参数
+        index:必需。字符串或正则表达式，从该参数指定的地方分割 stringObject
+        howmany：可选。该参数可指定返回的数组的最大长度。如果设置了该参数，返回的子串不会多于这个参数指定的数组。
+        如果没有设置该参数，整个字符串都会被分割，不考虑它的长度。
+    */
+    var str="How=are=you=do=ing=today?";
+    var arr = str.split("=");
+    // document.write(arr)
+    console.log(typeof arr)
+    // document.write(str.split(" ") + "<br />");
+    // document.write(str.split("") + "<br />");
+    document.write(str.split("=",10) + "<br />");// 指定长度
+
+    // var str1 = 'a-b-c-d-e';
+    // document.write(str1.split("-") + "<br />");// a,b,c,d,e
+</script>
+</body>
+</html>

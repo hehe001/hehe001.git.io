@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>元素获取</title>
+    <meta name="keywords" content="新航路教育、HTML5、前端开发、HTML5培训"/>
+    <meta name="description" content="新航路教育"/>
+    <style>
+	p b {
+		border: 1px solid red;
+	}
+	div {
+		width: 200px;
+		height: 200px;
+		border: 1px solid red;
+	}
+	.test {
+		text-decoration: underline;
+	}
+    </style>
+</head>
+<body>
+<div id="div1" class="div1">
+	想控制字体大小
+</div>
+<p>sadfsdfssdafsdfasdfsdf</p>
+<ul id="list">
+	<li>这是列表一</li>
+	<li>这是列表二</li>
+	<li>这是列表三</li>
+	<li>这是列表四</li>
+	<li>这是列表五</li>
+	<li>这是列表六</li>
+</ul>
+<script>
+	var oDiv = document.getElementById('div1');
+	// document  
+	// get  Element  By  Id 
+	oDiv.style.width = '300px';
+	oDiv.style.height = '100px';
+	oDiv.style.fontSize = '20px';
+	oDiv.style.backgroundColor = '20px';
+	// 获取id 的方法
+
+	var aaa = document.getElementsByTagName('p');
+	aaa[0].style.width = '100px';
+	aaa[0].style.height = '50px';
+	aaa[0].style.border = '1px solid red';
+
+	aaa[0].innerHTML = '<span class="test">测试</span><b>字体</b>';
+
+
+	var oList = document.getElementById('list');
+	var oLi = oList.getElementsByTagName('li');
+	// alert(oLi.length)长度
+	oLi[3].style.border = '1px solid red';
+	// //通过id 获取标签元素
+	// var div1 = document.getElementById('div1');
+	
+	// //设置样式
+	// div1.style.backgroundColor = 'red';
+	// div1.style.width = '200px';
+	// div1.style.height = '200px';
+
+	// //通过标签名 获取标签元素(获取多个) 
+	// var p1 = document.getElementsByTagName('p')[0];
+	// //给p标签增加内容
+	// p1.innerHTML = '我的p标签<b>增加了b标签</b>';
+	// p1.style.backgroundColor = 'green';
+
+
+	// var li1 = document.getElementsByTagName('li');
+	// li1[1].style.border = '1px solid red';
+
+	// //获取body
+	var body = document.getElementsByTagName("body")[0];
+	body.style.backgroundColor = "yellow";
+
+	// // 获取 指定ul 中的li
+	// var oList = document.getElementById('list');
+	// var oLi = oList.getElementsByTagName('li');
+	// oLi[3].style.fontSize = '30px';
+
+
+</script>
+</body>
+</html>

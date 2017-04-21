@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    <title>文本阴影</title>
+    <meta name="keywords" content="北京新航路科技有限公司"/>
+    <meta name="description" content="北京新航路科技有限公司"/>
+    <style>
+        * {
+            margin: 0;padding:0;
+        }
+        .box {
+            width:1000px;
+            margin: 20px auto 0;
+            border: 1px solid red;
+        }
+        p {
+            line-height: 27px;
+            font-size: 36px;
+            padding: 50px;
+            text-align: center;
+            background-color: #ccc;
+            color: #fff;
+        }
+        /**
+            text-shadow: h-shadow v-shadow blur color;
+            h-shadow:必需。水平阴影的位置。允许负值。
+            v-shadow:必需。垂直阴影的位置。允许负值。
+            blur:可选。模糊的距离。
+            color:可选。阴影的颜色。
+        */
+        .p1 {
+            /**
+                一、只设置模糊距离的辉光效果
+            */
+            text-shadow:0 0 10px red;
+        }
+        .p2 {
+            /**
+                二、设置模糊距离跟垂直方向值
+            */
+            text-shadow:-5px 0 2px red;
+        }
+        .p3 {
+            /**
+                三、设置模糊距离跟垂直方向值和水平方向值
+            */
+            text-shadow:-2px -2px 2px red,0 2px 2px red,0 4px 4px red,-4px -4px 4px red;
+        }
+        .p4 {
+            /**
+                四、设置模糊字体、需与color:transparent; 配合使用
+                // 透明
+            */
+            color:transparent; 
+            text-shadow:0 0 5px red;
+        }
+        .p5 {
+            /**
+                五、影子效果
+            */
+            text-shadow:3px 5px 0 red;
+        }
+        .p6 {
+            /**
+                六、描边效果
+            */
+            text-shadow:-1px -1px 0 red,1px 1px 0 red;
+        }
+        .p7 {
+            /**
+                七、3D效果
+                rgba(197, 223, 248,0.8)；
+                
+            */
+            text-shadow:-3px -3px 0 rgba(197, 223, 248,0.8),-5px -5px 0 rgba(197, 223, 248,0.8),-7px -7px 0 rgba(197, 223, 248,0.8),-9px -9px 0 rgba(197, 223, 248,0.8),-11px -11px 0 rgba(197, 223, 248,0.8);
+        }
+        .p8 {
+            /**
+                八、3D效果 换方向
+            */
+            text-shadow:3px 3px 0 rgba(197, 223, 248,0.8),5px 5px 0 rgba(197, 223, 248,0.8), 7px 7px 0 rgba(197, 223, 248,0.8),9px 9px 0 rgba(197, 223, 248,0.8),11px 11px 0 rgba(197, 223, 248,0.8);
+        }
+        .p9 {
+            /**
+                九、位移
+            */
+            color: red;
+            text-shadow:3px 3px 0 #eee,5px 5px 0 #999;
+        }
+        .p10 {
+            /**
+                十、三维效果
+            */
+            background-color: green;
+            font-size: 50px;
+            color: rgba(255, 179, 140, 0.2);
+            text-shadow: 3px 3px 0 rgba(180,255,0,0.5);
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <p class="p1">一、只设置模糊距离的辉光效果</p>
+</div>
+
+<div class="box">
+    <p class="p2">二、设置模糊距离跟垂直方向值</p>
+</div>
+
+<div class="box">
+    <p class="p3">三、设置模糊距离跟垂直方向值和水平方向值</p>
+</div>
+
+<div class="box">
+    <p class="p4">四、设置模糊字体、需与color:transparent; 配合使用</p>
+</div>
+
+<div class="box">
+    <p class="p5">五、影子效果</p>
+</div>
+
+<div class="box">
+    <p class="p6">六、描边效果</p>
+</div>
+
+<div class="box">
+    <p class="p7">七、3D效果</p>
+</div>
+
+<div class="box">
+    <p class="p8">八、3D效果 换方向</p>
+</div>
+
+<div class="box">
+    <p class="p9">九、位移</p>
+</div>
+
+<div class="box">
+    <p class="p10">十、三维效果</p>
+</div>
+
+
+
+</body>
+</html>

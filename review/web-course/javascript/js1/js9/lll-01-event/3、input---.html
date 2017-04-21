@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+        li {
+            list-style: none;
+        }
+        input {
+            height: 40px;
+            width: 300px;
+            padding: 0 10px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<!-- <input type="text" value="" placeholder="这是什么呀" id="test"/> -->
+<input type="text" value="" id="test"/>
+<input type="text" value="" id="test1"/>
+<script>
+    function placeholder(id,defText){ 
+        var oInput = document.getElementById(id);
+        var value = defText || oInput.value
+        if(oInput.value==''){
+            oInput.value=value;
+            oInput.style.color="#999"
+        }
+        oInput.onfocus=function(){ 
+            if(this.value==value){ 
+                this.value='';
+            }
+            this.style.color="#333"
+        }; 
+        oInput.onblur=function(){ 
+            if(this.value==''){
+                this.value=value;
+                oInput.style.color="#999"
+            } 
+        }
+    }
+    placeholder('test','请输入你的手机号');
+    placeholder('test1','请输入你的邮箱地址');
+</script>
+</body>
+</html>

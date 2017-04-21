@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    <title>模板引擎</title>
+    <meta name="keywords" content="北京新航路科技有限公司"/>
+    <meta name="description" content="北京新航路科技有限公司"/>
+	<script src="/js/jquery.js"></script>
+	<script src="/js/sea.js"></script>
+	<script src="/js/handlebars-1.1.2.js"></script>
+</head>
+<body>
+<div id="test"></div>
+<script id="entry-template" type="text/x-handlebars-template">
+  {{#each peo}}
+  <div class="entry">
+    <h1>{{title}}</h1>
+    <div class="body">
+      {{body}}
+    </div>
+  </div>
+  {{/each}}
+</script>
+<div id="test2"></div>
+<script>
+	var context = {
+        peo:[
+                {
+                    title: "My New Post", 
+                    body: "This is my first post!"
+                },
+                {
+                    title: "My New Post", 
+                    body: "This is my first post!"
+                },
+                {
+                    title: "My New Post", 
+                    body: "This is my first post!"
+                }
+            ]
+        }
+	
+	//jquery 版本
+	var source1   = $("#entry-template").html();
+	var template = Handlebars.compile(source1);
+	var html    = template(context);
+	$('#test2').html(html);
+</script>
+</body>
+</html>

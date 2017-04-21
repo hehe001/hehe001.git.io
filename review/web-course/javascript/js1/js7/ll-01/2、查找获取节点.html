@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+<div id="id1">这是id</div>
+<p>这是p标签</p>
+<input type="text" name="name" value="你好"/>
+<div class="div1">这是class</div>
+
+<script>
+	/*
+	document.getElementById()
+	document.getElementsByTagName()
+	
+	document.getElementsByName()
+	
+	document.getElementsByClassName()（新）
+	
+	document.querySelector(css选择符)（新）
+	document.querySelectorAll()（新）
+	*******带有新标识的选择方法仅在IE8(含)+可以使用
+	*/
+	// 获取 name 值
+	var test = document.getElementsByName("name");
+	console.log(test[0].value);
+	// 获取 class 
+	var div1 = document.getElementsByClassName('div1');
+	console.log(div1[0]);
+	//方法仅仅返回匹配指定选择器的第一个元素
+	//指定一个或多个匹配元素的 CSS 选择器。 可以使用它们的 id, 类, 类型, 属性, 属性值等来选取元素。
+	var div2 = document.querySelector('.div1');
+	console.log(div2);
+	var div3 = document.querySelector('#id1');
+	console.log(div3);
+	var div4 = document.querySelector('p');
+	console.log(div4);
+	//返回匹配指定 CSS 选择器元素的所有子元素节点列表
+	var div5 = document.querySelectorAll('p,#id1,.div1');
+	console.log(div5)
+</script>
+</body>
+</html>

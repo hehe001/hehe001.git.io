@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        list-style: none;
+    }
+    .w {
+        width: 1000px;
+        margin: 0 auto;
+    }
+    .tab-nav {
+        height: 30px;
+        overflow: hidden;
+    }
+    .tab-nav li {
+        float: left;
+        width: 60px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        margin-right: 10px;
+    }
+    .tab-nav .cur {
+        background: red;
+        color: #fff;
+    }
+    .tab-con div {
+        width: 500px;
+        height: 200px;
+        border: 1px solid red;
+		display: none;
+    }
+    </style>
+</head>
+<body>
+<div class="w">
+    <ul class="tab-nav" id="tab-nav">
+        <li>第一个</li>
+        <li>第二个</li>
+        <li>第三个</li>
+        <li>第四个</li>
+    </ul>
+    <div class="tab-con" id="tab-con">
+        <div class="box1">模块一</div>
+        <div class="box1">模块二</div>
+        <div class="box1">模块三</div>
+        <div class="box1">模块四</div>
+    </div>
+</div>
+<script>
+    /*
+		函数：用于存放一条或多条代码的空间。
+     1，只是存放了代码，本身不会执行这些代码，只有调用这个函数，里面的代码才会被执行。
+     2, 函数只要是后面加了小括号，就会被立即执行。
+     3，函数相当于css中的class，可以重复调用。
+		1，匿名函数   2，有名字的函数。
+		函数调用：
+		     1，直接调用:
+		          有名字的函数： 函数名字();
+		          匿名函数： (匿名函数)();
+		     2，事件调用:
+		          有名字的函数： 事件=函数名字; （函数名字后面没有小括号）
+		          匿名函数： 事件=function(){};
+		事件后面调用的函数叫事件处理函数。
+
+		//fn1(); //一句话写完了，要加分号。
+		//document.onclick=fn1; //这是事件处理函数。
+		//document.onclick=fn1(); //函数只要是后面加了小括号，就会被立即执行。
+		document.onclick=function(){ //这是事件处理函数。
+		     alert('我被点击了！');
+		     fn1(); //这是一个普通的函数，不是事件处理函数。
+		};
+    */
+    // 有名字的函数
+    function fn1(){
+    	console.log(1);
+    }
+    fn1();
+    //  匿名函数
+    (function(){
+        console.log('匿名哟')
+    })();
+    // 
+    function fn2(){
+    	console.log('不会自动执行')
+    }
+    document.onclick = fn2;
+    document.onclick = function(){
+        fn2();
+        alert('1')
+    };
+    setInterval(fn2,30);
+    // function fn3(){
+    // 	console.log('自动执行')
+    // }
+   
+    // document.onclick = fn3();
+</script>
+</body>
+</html>

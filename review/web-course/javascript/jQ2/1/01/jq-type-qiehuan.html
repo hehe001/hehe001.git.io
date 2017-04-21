@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>JQ全选 反选</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <script src="../jquery.js"></script>
+    <style>
+      li{
+        list-style:none;
+      }
+      .ol{
+        float:left;
+      }
+      .ol .oli{
+        width:50px;
+        height:25px;
+        text-align:center;
+        background:blue;
+        border:1px solid purple;
+      }
+      .ul{
+        float:left;
+      }
+      .ul .uli{
+        width:50px;
+        height:50px;
+        text-align:center;
+        background:pink;
+        border:1px solid red;
+        display:none;
+      }
+      .ol .cur{
+         background:yellow;
+      }
+    </style>
+</head>
+<body>
+<div class="test clearfix">
+  <ol id="ol" class="ol">
+    <li class="oli cur">模块1</li>
+    <li class="oli">模块2</li>
+    <li class="oli">模块3</li>
+  </ol>
+  <ul id="ul" class="ul">
+    <li class="uli">模块111</li>
+    <li class="uli">模块222</li>
+    <li class="uli">模块333</li>
+  </ul>
+</div>
+<script>
+// 《tab切换 方法一》
+// $(function(){
+//   $('#ol .oli').click(function(){
+//    var index = $(this).index();
+//    $(this).addClass('cur').siblings('li').removeClass('cur');
+//    $('#ul .uli').eq(index).show().siblings('li').hide();
+//   })
+// })
+// 《tab切换 方法二》
+$(function(){
+    $('#ol').on('click','li',function(){
+        var index = $(this).index();
+        $(this).addClass('cur').siblings('li').removeClass('cur');
+        $('#ul .uli').eq(index).show().siblings('li').hide();
+    })    
+})
+</script>
+</body>

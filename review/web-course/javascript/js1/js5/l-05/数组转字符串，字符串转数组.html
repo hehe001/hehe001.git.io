@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+
+<script>
+    // 业务逻辑中很是重要
+    var arr = ['aaa','bbb','ccc','ddd'];
+    // 数组转字符串
+
+    console.log(arr.join(','));
+    console.log(arr.join('==='));
+    // 字符串转数组
+    var str = 'a=12&c=34&d=55';
+    var nArr = str.split('&');
+    console.log(nArr);
+    var newArr = [];
+    for(var i =0,len=nArr.length;i<len;i++){
+        // console.log('每个值为：'+nArr[i]);// a=b c=d d=e
+        // console.log('每个值转成新数组：'+nArr[i].split('='));
+        console.log('新数组第一个值为：'+nArr[i].split('=')[1]);
+        // newArr.push(nArr[i].split('=')[0]);
+        // console.log('新数组第二个值为：'+nArr[i].split('=')[1]);
+    }
+    console.log(newArr)
+</script>
+</body>
+</html>

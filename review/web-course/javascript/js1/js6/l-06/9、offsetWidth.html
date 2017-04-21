@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+<style>
+* {margin:0;padding:0;}
+li{list-style:none;}
+#test1 {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background: red;
+}
+#test2 {
+    width: 100px;
+    height: 100px;
+    padding: 0 10px;
+}
+#test3 {
+    width: 100px;
+    height: 100px;
+    padding: 0 10px;
+    border: 5px solid red;
+}
+</style>
+</head>
+<body>
+<div id="test1"></div>
+<div id="test2"></div>
+<div id="test3"><marquee>asd<b>fa</b>sdf</marquee></div>
+
+<script>
+    var oDiv = document.getElementsByTagName('div');
+    console.log(oDiv[0].offsetWidth);
+    console.log(oDiv[1].offsetWidth);
+    console.log(oDiv[2].offsetWidth);
+    // // offsetWidth   width + padding +border
+    // // offsetHeight   height + padding +border
+    console.log(oDiv[0].offsetHeight);
+    console.log(oDiv[1].offsetHeight);
+    console.log(oDiv[2].offsetHeight);
+</script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name="renderer" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<title>作业哈哈哈</title>
+<meta name="keywords" content="http://www.xhanglu.com/ 新航路"/>
+<meta name="description" content="http://www.xhanglu.com/ 新航路"/>
+<link rel="stylesheet" type="text/css" href="/css/index.css"/>
+<script src="/js/sea.js"></script>
+<script src="/js/jquery.js"></script>
+<script src="/js/handlebars-1.1.2.js"></script>
+</head>
+<body>
+	<div class="jf-nav">
+		<div class="nav-n clearfix">
+			<h1>
+				<a class="nav-logo" href="##"></a>
+			</h1>
+			<ul class="nav-ul">
+				<li>
+					<a href="##">简历管理</a>
+				</li>
+				<li>
+					<a href="##">简历管理</a>
+				</li>
+				<li>
+					<a href="##">简历管理</a>
+				</li>
+				<li>
+					<a href="##">简历管理</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="j-con">
+		<div class="j-cr-l clearfix">
+			<div class="j-left">
+				<p class="j-title clearfix">
+					<var>我的简历</var>
+					<span>预览简历</span>
+				</p>
+				<ul class="list" id="list">
+					<li class="j-pop j-iph j-bj-line clearfix" id="job_jy01">
+						<p class="j-pt clearfix j-pt-s">
+							<var></var>
+							<em>工作经历</em>
+							<span class="bjpc-01">添加</span>
+						</p>
+						<div id="demo"></div>
+					</li>
+				</ul>
+			</div>
+			<div class="j-right">		
+			</div>
+			
+		</div>
+	</div>
+	<script id="add-tpl" type="text/x-handlebars-template">
+		<div class="bj-all bj-job clearfix" id="job-tj">
+			<var class="bjpc-01"></var>
+			<p>
+				<span>填写准确的期望工作能大大提高求职成功率哦…</br>快来添加期望工作吧！</span>
+				<b>添加期望工作</b>
+			</p>
+		</div>
+	</script>
+	<script id="bianji-tpl" type="text/x-handlebars-template">
+		<p class="clearfix j-line-in" id="job-title">
+			<input type="text" class="line-in company" value="{{company}}" id="line-in" placeholder="公司名称">
+			<input type="text" class="line-in line-in2 position" value="{{position}}" id="line-in1" placeholder="职位名称">
+		</p>
+		<p class="clearfix j-line-in j-line-in1">
+			<span class="xl_01">
+				<input type="text" class="line-in in-mc in-mc1" value="" id="line-in2">
+				<span class="te_xl" id="t_xl1">
+					<var>1991年</var>
+					<var>1992年</var>
+					<var>1993年</var>
+					<var>1994年</var>
+					<var>1995年</var>
+				</span>
+				<em></em>
+			</span>
+			<span class="xl_01">
+				<input type="text" class="line-in in-mc" value="" id="line-in3">
+				<span class="te_xl"  id="t_xl2">
+					<var>1月</var>
+					<var>2月</var>
+					<var>3月</var>
+					<var>4月</var>
+					<var>5月</var>
+				</span>
+				<em></em>
+			</span>
+			<span class="xl_01">
+				<input type="text" class="line-in in-mc" value="" id="line-in4">
+				<span class="te_xl"  id="t_xl3">
+					<var>1991年</var>
+					<var>1992年</var>
+					<var>1993年</var>
+					<var>1994年</var>
+					<var>1995年</var>
+				</span>
+				<em></em>
+			</span>
+			<span class="xl_01">
+				<input type="text" class="line-in in-mc" value="" id="line-in5">
+				<span class="te_xl"  id="t_xl4">
+					<var>1月</var>
+					<var>2月</var>
+					<var>3月</var>
+					<var>4月</var>
+					<var>5月</var>
+				</span>
+				<em></em>
+			</span>
+		</p>
+		<label class="gl-gw-01">
+			<input type="checkbox">&nbsp;&nbsp;添加更多描述
+		</label>
+		<p class="clearfix j-line-in">
+			<input type="text" class="line-in" value="" id="line-in6"  placeholder="汇报对象">
+			<input type="text" class="line-in line-in2" value="" id="line-in7" placeholder="下属人数">
+		</p>
+		<textarea name="" id="line-in8" cols="30" rows="10" class="test-001"placeholder="从招聘，培训，团队建设，销售目标等角度描述管理方面的成绩"></textarea>
+		<div class="in-job-te">
+			<span>从招聘，培训，团队建设，销售目标等角度描述管理方面的成绩吧~</span>
+			<p>
+				<input type="text" class="job-te-01" value="" id="line-in9" placeholder="月销售额">
+				<input type="text" value="" id="line-in10" placeholder="年销售额">
+				<input type="text" value="" id="line-in11" placeholder="目标完成率">
+				<input type="text" class="job-te-01" value="" id="line-in12" placeholder="产品">
+				<input type="text" value="" id="line-in13" placeholder="销售对象">
+				<input type="text" value="" id="line-in14" placeholder="销售方式">
+			</p>
+		</div>
+		<label class="gl-gw-01">
+			<input type="checkbox">&nbsp;&nbsp;添加更多描述
+		</label>
+		<textarea name="" cols="30" rows="10" class="test-001 test-002" style="margin:0 0;" id="line-in15"></textarea>
+		<div class="qrk-j" id="qrk-j1">
+			<input type="button" value="保存" class="job-qr">
+			<input type="button" value="取消" class="qx-j" id="job-qx">
+		</div>
+	</script>
+	<script id="show-tpl" type="text/x-handlebars-template">
+		<ul class="list-01" id="list-01">
+			{{#each this}}
+			<li class="clearfix list-02" data-index="{{@index}}">
+				<div>
+					<var></var>
+					<em>{{company}}</em>
+					<span>-&nbsp;{{position}}</span>
+				</div>
+				<p>
+					<span class="job-bj">编辑</span>
+                    <em class="job-del">删除</em>
+				</p>
+			</li>
+			{{/each}}
+		</ul>
+	</script>
+	<script type="text/javascript">
+		seajs.use("index",function (app) {
+	        app.init();
+	    });
+	</script>
+</body>
+</html>

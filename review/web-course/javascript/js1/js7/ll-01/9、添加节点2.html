@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+</head>
+<body>
+<input type="button" value="添加" id="btn"/>
+<ul id="list">
+	
+</ul>
+<script>
+	var oList = document.getElementById('list');
+	var oBtn = document.getElementById('btn');
+	var index =0;
+	oBtn.onclick = function(){
+		index++;
+		//创建标签 createElement()
+		// createElement("标签名") : 创建新元素
+		var li = document.createElement('a');
+		li.innerHTML = '我要准备添加了'+index;
+		li.href = '#';
+		li.title = '#';
+		// li.style.border = "1px solid red";
+		//appendChild()  
+		//添加子标签 appendChild()
+		// appendChild() 在最后面添加子节点
+		oList.appendChild(li)
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    <title>transform</title>
+	<style type="text/css">
+	.m {
+		width: 1000px;
+		margin: 0 auto;
+	}
+	@keyframes wd {
+		0% {
+			width: 100px;
+		}
+		10% {
+			width: 200px;
+		}
+		20%{
+			width: 300px;
+		}
+		50% {
+			width: 400px;
+		}
+		80% {
+			width: 500px;
+		}
+		100%{
+			width: 600px;
+		}
+	}
+	.div{
+	    width: 50px;
+	    height: 50px;
+	    background: red;
+	}
+	.div:hover{
+	    -webkit-animation:wd 2s ease-out forwards;
+	    -moz-animation:wd 2s ease-out forwards;
+	    animation:wd 2s ease-out forwards;
+	}
+	.div1{
+	    width: 50px;
+	    height: 50px;
+	    background: red;
+	    -webkit-animation:wd 2s ease-out 1 forwards;
+	    -moz-animation:wd 2s ease-out 1 forwards;
+	    animation:wd 2s ease-out 1 forwards;
+	}
+</style>
+</head>
+<body>
+<div class="m">
+	<div class="div"></div>
+	<div class="div1"></div>
+	<!-- 
+		Animation:animation-name || animation-duration || animation-timing-function || animation-delay || animation-iteration-count || animation-direction
+		
+		1、animation-name 用来定义一个动画的名称
+		2、animation-duration 用来指定元素播放动画所持续的时间长
+		3、animation-timing-function 
+		linear：线性过渡。
+		ease：平滑过渡。
+		ease-in：由慢到快。
+		ease-out：由快到慢。
+		ease-in-out：由慢到快再到慢。
+
+		4、animation-delay
+		指定对象动画延迟的时间
+		5、animation-iteration-count用来指定元素播放动画的循环次数，默认值为1
+		infinite：无限循环
+		<number>：指定对象动画的具体循环次数   1 ,2 ,3 
+		6、animation-direction
+		normal：正常方向
+		reverse：反方向运行
+		alternate：动画先正常运行再反方向运行，并持续交替运行
+		alternate-reverse：动画先反运行再正方向运行，并持续交替运行
+		7、animation-fill-mode 动画结束以后的状态。
+		none：默认值。不设置对象动画之外的状态
+		forwards：设置对象状态为动画结束时的状态
+		backwards：设置对象状态为动画开始时的状态
+		both：设置对象状态为动画结束或开始的状态
+
+		8、animation-play-state
+		running：运动
+		paused：暂停
+		keyframes（关键帧）的语法
+
+	 -->
+</div>
+</body>
+</html>

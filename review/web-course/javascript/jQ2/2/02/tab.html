@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <script src="../jquery.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .cur {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<ul id="btn1">
+    <li>菜单一</li>
+    <li>菜单一</li>
+    <li>菜单一</li>
+</ul>
+<div id="con1">
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+</div>
+<script>
+    // on(events,[selector],[data],fn)
+    //在选择元素上绑定一个或多个事件的事件处理函数。
+    // off(events,[selector],[fn])
+    // 在选择元素上移除一个或多个事件的事件处理函数。
+    $(function(){
+        // function test(){
+        $('#btn1').on('click','li',function(){
+            var index = $(this).index();
+            $(this).addClass('cur').siblings('li').removeClass('cur');
+            $('#con1 div').eq(index).show().siblings('div').hide();
+        })    
+    })
+</script>
+</body>
+</html>

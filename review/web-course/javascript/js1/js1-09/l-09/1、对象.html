@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+    <style>
+	div {
+		width: 100px;
+		height: 50px;
+	}
+    </style>
+</head>
+<body>
+<script>
+	/**
+		对象 
+		使用最多的一个类型
+		使用它来存储和传输数据非常方便
+
+		创建对象  两种方法
+		1、使用new 操作符 后跟  Object 
+		
+		var person = new Object();
+		person.name = 'xhanglu';
+		person.age = '29';
+		console.log(person);
+		2、
+		var person = {
+			name:"xhanglu",
+			age:"29"
+		}
+		var person = {} // 与 new Object() 相同
+		person.name = 'xhanglu';
+		person.age = '29';
+		
+	*/
+	// var person = new Object();
+	
+	// person.name = 'xhanglu';
+	// person.age = '29';
+	// console.log(person);
+	// person.fn = function(){
+	// 	console.log(1)
+	// }
+	// person.fn()
+	// console.log(person);
+	var person = {
+		name:"xhanglu",
+		age:"29",
+		fn:function(){
+			console.log(1)
+		}
+	}
+	var person1 = {
+		name:"xhanglu",
+		age:"29",
+		fn:function(){
+			console.log(1)
+		}
+	}
+	// var person = {
+	// 	"name":"xhanglu",
+	// 	"age":"29"
+	// }
+	person.fn();
+	person.name = 36;
+	console.log(person);
+
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        list-style: none;
+    }
+    .w {
+        width: 1000px;
+        margin: 0 auto;
+    }
+    .tab-nav {
+        height: 30px;
+        overflow: hidden;
+    }
+    .tab-nav li {
+        float: left;
+        width: 60px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        margin-right: 10px;
+    }
+    .tab-nav .cur {
+        background: red;
+        color: #fff;
+    }
+    .tab-con div {
+        width: 500px;
+        height: 200px;
+        border: 1px solid red;
+        display: none;
+
+    }
+    </style>
+</head>
+<body>
+<div class="w">
+    <ul class="tab-nav" id="tab-nav">
+        <li>按钮一</li>
+        <li>按钮二</li>
+        <li>按钮三</li>
+        <li>按钮四</li>
+    </ul>
+    <div class="tab-con" id="tab-con">
+        <div>模块一</div>
+        <div>模块二</div>
+        <div>模块三</div>
+        <div>模块四</div>
+    </div>
+</div>
+<div class="w">
+    <ul class="tab-nav" id="tab-nav1">
+        <li>按钮一</li>
+        <li>按钮二</li>
+        <li>按钮三</li>
+        <li>按钮四</li>
+    </ul>
+    <div class="tab-con" id="tab-con1">
+        <div>模块一</div>
+        <div>模块二</div>
+        <div>模块三</div>
+        <div>模块四</div>
+    </div>
+</div>
+<script>
+    function tab(id1,type,id2){
+        var oBtn = document.getElementById(id1);
+        var aBtns = oBtn.getElementsByTagName('li');
+        var oBox = document.getElementById(id2);
+        var aBoxs = oBox.getElementsByTagName('div');
+        aBtns[0].className = 'cur';
+        aBoxs[0].style.display = 'block';
+        for(var i=0,len=aBtns.length;i<len;i++){
+            aBtns[i].index = i;
+            aBtns[i][type] = function(){
+            // aBtns[i].onclick = function(){
+                for(var j=0,lens=aBoxs.length;j<lens;j++){
+                    aBtns[j].className = '';
+                    aBoxs[j].style.display = 'none';
+                }
+                this.className = 'cur';
+                aBoxs[this.index].style.display = 'block';
+            }
+        }
+    }
+    tab('tab-nav','onclick','tab-con');
+    tab('tab-nav1','onmouseover','tab-con1');
+
+    //  中括号运算符
+    //  点运算符
+    // 不考虑[]用作数组或集合下标使用的情况，单针对某个对象，这两种写法本质是一样的。
+
+    /*
+        中括号运算符总是能代替点运算符。但点运算符却不一定能全部代替中括号运算符。
+        中括号运算符可以用字符串变量的内容作为属性名。点运算符不能。
+        中括号运算符可以用纯数字为属性名。点运算符不能。
+        中括号运算符可以用js的关键字和保留字作为属性名。点运算符不能
+        location.href = location['href']
+    */
+
+    console.log(location.href);
+    console.log(location['href']);
+    // document.onclick = function(){
+    //     console.log('点击事件,此时使用.写的');
+    // }
+    document['onclick'] = function(){
+        console.log('点击事件,此时使用中括号');
+    }
+    // function tab(id,id2,type){
+    //     var aBtn = document.getElementById(id).getElementsByTagName('li');
+    //     var aBox = document.getElementById(id2).getElementsByTagName('div');
+    //     aBtn[0].className = 'cur';
+    //     aBox[0].style.display = 'block';
+    //     for(var i=0,len=aBtn.length;i<len;i++){
+    //         aBtn[i].index = i;
+    //         aBtn[i][type] = function(){
+    //         // aBtn[i][type] = function(){
+    //             for(var j=0,lens = aBox.length;j<lens;j++){
+    //                 aBtn[j].className = '';
+    //                 aBox[j].style.display = 'none';
+    //             }
+    //             aBtn[this.index].className = 'cur';
+    //             aBox[this.index].style.display = 'block';
+    //         }
+    //     }
+    // }
+    // tab('tab-nav','tab-con','onclick');
+    // tab('tab-nav1','tab-con1','onmouseover');
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>事件2</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	li{
+		list-style: none;
+	}
+	.clear{
+		clear:both;
+		height:0;
+		overflow:hidden;
+	}
+	.clearfix:after {
+		content:'.';
+		display:block;
+		height:0;
+		clear:both;
+		visibility:hidden;
+	}
+	.clearfix{*zoom:1;}
+	.test{
+		color:#77b6bf;
+	}
+	p{
+		height:30px;
+		font-size:12px;
+		line-height:30px;
+		background:url(i/bj-1.png) no-repeat 0 center;
+		padding-left:17px;
+	}
+	ul{
+		display:none;
+		/*padding-left:;*/
+		/*border:1px solid red;*/
+	}
+	ul.ulz{
+		padding-left:21px;
+	}
+	ul.ul1{
+		padding-left:42px;
+	}
+	</style>
+</head>
+<body>
+<div id="test" class="test">
+	<p>技术资源</p>
+	<ul class="ulz">
+		<li>
+			<p>游戏</p>
+			<ul class="ul1">
+				<li>Mobile Gaming & Graphics</li>
+				<li>Augmented Reality (Vuforia)</li>
+				<li>Peer-to-Peer (AllJoyn)</li>
+			</ul>
+		</li>
+		<li>
+			<p>多媒体</p>
+			<ul class="ul1">
+				<li>Emaging</li>
+				<li>Audio</li>
+			</ul>
+		</li>
+		<li>
+			<p>效能</p>
+			<ul class="ul1">
+				<li>Efficency</li>
+			</ul>
+		</li>
+	</ul>
+<script>
+	function addEvent(obj,type,fn){
+	    if(obj.addEventListener){
+	          obj.addEventListener(type,fn,false);
+	    }else {
+	         obj.attachEvent('on'+type,fn);
+	    }
+	}
+	function css(obj,attr,value){
+        if(arguments.length===2){
+            if(obj.currentStyle){
+               return obj.currenStyle[attr];
+            }else {
+               return getComputedStyle(obj,false)[attr];
+            }else if(arguments.length===3){
+	            obj.style[attr]=value;
+	        }
+        }
+    }
+    function next(obj){
+        return obj.nextElementSibling || obj.nextSibling;
+    };
+  	var oTest = document.getElementById('test');
+  	var bTrue = true;
+  	addEvent(oTest,'click',function(ev){
+		var oEvent = ev || window.event;
+		var oTarget = oEvent.target || oEvent.srcElement;
+		console.log(oTarget);
+	 	if(oTarget.tagName.toLowerCase()=='p'){
+		    var nt = next(oTarget);
+ 		 	if(css(nt,"display")=="block")
+                nt.style.display="none";
+
+            }else{
+                nt.style.display="block";
+            }
+	 	}
+  	})
+</script>
+</body>
+</html>

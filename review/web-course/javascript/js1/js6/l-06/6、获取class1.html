@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路师徒学院"/>
+    <meta name="description" content="新航路师徒学院"/>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        list-style: none;
+    }
+    .w {
+        width: 1000px;
+        margin: 0 auto;
+    }
+    .tab-nav {
+        height: 30px;
+        overflow: hidden;
+    }
+    .tab-nav li {
+        float: left;
+        width: 60px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        margin-right: 10px;
+    }
+    .tab-nav .cur {
+        background: red;
+        color: #fff;
+    }
+    .tab-con div {
+        width: 500px;
+        height: 200px;
+        border: 1px solid red;
+		display: none;
+    }
+    </style>
+</head>
+<body>
+<div class="w">
+    <ul class="tab-nav" id="tab-nav">
+        <li>第一个</li>
+        <li>第二个</li>
+        <li>第三个</li>
+        <li>第四个</li>
+    </ul>
+    <div class="tab-con" id="tab-con">
+        <div class="box1">模<div>块</div>一</div>
+        <div class="box1">模块二</div>
+        <div class="box1">模<div>块</div>三</div>
+        <div class="box1">模块四</div>
+    </div>
+</div>
+<script>
+    function getClassObj(parent,className){
+        var oParent = document.getElementById(parent)
+        var obj=oParent.getElementsByTagName('*');//获取 父级的所有子集
+        var pinS=[];//创建一个数组 用于存储类为className的元素
+        for (var i=0,len=obj.length;i<len;i++) {//遍历子集、判断类名、压入数组
+            if (obj[i].className==className)
+                pinS.push(obj[i]);
+        };
+        return pinS;
+    }
+    // function tab(){
+    //     var aBtn = document.getElementById('tab-nav').getElementsByTagName('li');
+    //     var aBox = getClassObj('tab-con','box1');
+    //     aBtn[0].className = 'cur';
+    //     aBox[0].style.display = 'block';
+    //     for(var i=0,len=aBtn.length;i<len;i++){
+    //         aBtn[i].index = i;
+    //         aBtn[i].onclick = function(){
+    //             for(var j=0,lens = aBox.length;j<lens;j++){
+    //                 aBtn[j].className = '';
+    //                 aBox[j].style.display = 'none';
+    //             }
+    //             aBtn[this.index].className = 'cur';
+    //             aBox[this.index].style.display = 'block';
+    //         }
+    //     }
+    // }
+    // tab();
+
+</script>
+</body>
+</html>

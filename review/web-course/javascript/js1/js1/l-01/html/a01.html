@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta http-equiv="Cache-Control" content="no-transform"/>
+    <meta name="author" content="新航路教育 - www.xhanglu.com"/>
+    <meta name="copyright" content="新航路教育 - www.xhanglu.com"/>
+    <title>新航路教育 - www.xhanglu.com</title>
+    <meta name="keywords" content="新航路教育、HTML5、前端开发、HTML5培训"/>
+    <meta name="description" content="新航路教育"/>
+    <!-- 头部 -->
+    <script type="text/javascript">
+        document.write('>>> Hello, world!');
+    </script>
+    <!-- 在<head>区域中，在页面被载入之前，脚本已经载入，准备好被调用。（放置：函数代码） -->
+    <script src="/js/index.js" type="text/javascript" charset="utf-8" async defer></script>
+    <script src="/js/index.js"></script>
+</head>
+<body>
+
+
+<!-- 为性能优化需将 javascript 代码放置在 body 标签的最末端 -->
+
+<!-- 内嵌代码 -->
+<script type="text/javascript">
+    document.write('>>> Hello, world!');
+    alert('你好')
+    console.log('打钱')
+</script>
+<!-- 在<body>区域中，在页面载入时，脚本被载入并立即执行。
+放置函数不会立即执行，只用调用时才执行，而且必须脚本成功加载完成之后，才能正确调用函数。 -->
+
+<!-- 外联文件 -->
+<script src="/js/application.js" type="text/javascript" charset="utf-8" async defer>
+</script>
+<!-- 在外部引用JavaScript，以.js为扩展名的文件中，在HTML页面中链接到这个脚本文件，不同的位置决定加载时机。 -->
+
+<!-- async -->
+<!-- async 属性仅适用于外部脚本（只有在使用 src 属性时）。 -->
+<!-- 有多种执行外部脚本的方法： -->
+<!-- 1、async="async"：脚本相对于页面的其余部分异步地执行（当页面继续进行解析时，脚本将被执行） -->
+<!-- 2、defer="defer"：脚本将在页面完成解析时执行,DOMContentLoaded 事件触发之前完成。 -->
+<!-- 3、不使用,在浏览器继续解析页面之前，立即读取并执行脚本 -->
+</body>
+</html>

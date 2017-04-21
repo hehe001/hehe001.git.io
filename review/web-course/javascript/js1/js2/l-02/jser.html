@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新航路师徒学院</title>
+    <meta name="keywords" content="新航路教育、HTML5、前端开发、HTML5培训"/>
+    <meta name="description" content="新航路教育"/>
+    <link rel="stylesheet" href="" id="teste">
+    <style>
+	p b {
+		border: 1px solid red;
+	}
+/*	.alert-box {
+		position: fixed;
+		width: 200px;
+		height: 300px;
+		left: 50%;
+		top: 50%;
+		margin: -150px 0 0 -100px;
+		display: none;
+		background: red;
+	}
+	body {
+		height: 1200px;
+		background: #ccc;
+	}*/
+	input {
+		width: 100px;
+		height: 30px;
+		border: 1px solid red;
+	}
+	.alert-box {
+		width: 200px;
+		height: 300px;
+		border: 1px solid red;
+		background: red;
+		display: none;
+	}
+    </style>
+</head>
+<body>
+<!-- <div id="div1" class="div1">
+	想控制字体大小
+</div>
+<p>sadfsdfssdafsdfasdfsdf</p>
+<p>sadfsdfssdafsdfasdfsdf</p>
+<p>sadfsdfssdafsdfasdfsdf</p>
+<ul id="list">
+	<li>这是列表一</li>
+	<li>这是列表二</li>
+	<li>这是列表三</li>
+	<li>这是列表四</li>
+	<li>这是列表五</li>
+	<li>这是列表六</li>
+</ul> -->
+<!-- <input type="button" id="btn" value="点我点我"/>
+<div id="div1" class="alert-box">
+	<a href="javascript:;">点我关闭</a>
+</div> -->
+<!-- <input type="button" id="btn" value="点我点我"/>
+<div id="div1" class="alert-box">
+	
+</div> -->
+<input type="button" id="btn" value="点我点我"/>
+<input type="button" id="btn1" value="点我点我"/>
+<div id="div1" class="alert-box">
+	
+</div>
+<script>
+	// var test = "这是个a1111lert提示框";
+	// alert(test);
+	// var sureOrCancle = confirm("单击“确定”继续。单击“取消”停止。"); 
+	// console.log(sureOrCancle);
+	// alert(sureOrCancle);
+	// if(false){
+	// 	alert('对')
+	// }else {
+	// 	alert('错')
+	// }
+	// if (sureOrCancle) { 
+	//  	alert("欢迎访问我们的 新航路官网页面！"); 
+	// } else {
+	// 	alert("再见啦！"); 
+	// }
+	// var theResponse = prompt("欢迎？","安师大发生的发生");
+	// //在控制台输出
+	// console.log(theResponse);
+	// document.title = "我能修改标题";
+	// document.write("我可以写一些内容在页面上。");
+	// document.write("asasdfsdf<h2>我可以写一些<var>内容</var>在页面上。</h2>asdfadsf");
+	// var link = document.getElementById('teste');
+	// link.href = 'index.css';
+	// var oDiv = document.getElementById('div1');
+	// document  
+	// get  Element  By  Id 
+	// oDiv.style.width = '300px';
+	// oDiv.style.height = '100px';
+	// oDiv.style.fontSize = '20px';
+	// oDiv.style.backgroundColor = 'yellow';
+	// var aaa = document.getElementsByTagName('p');
+	// aaa[0].style.width = '100px';
+	// aaa[2].style.height = '50px';
+	// aaa[2].style.color = 'red';
+	// aaa[0].style.border = '1px solid red';
+	// aaa[2].innerHTML = '<span class="test">测试</span><b>字体</b>';
+	// var oList = document.getElementById('list');
+	// var oLi = oList.getElementsByTagName('li');
+	// alert(oLi.length)
+	// oLi[3].style.border = '1px solid red';
+	// var oBtn = document.getElementById("btn");
+	// var oBox = document.getElementById('div1');
+	// var oClose = oBox.getElementsByTagName('a')[0];
+	// oBtn.onclick = function(){
+	// 	oBox.style.display = 'block';
+	// }
+	// oClose.onclick = function(){
+	// 	oBox.style.display = 'none';
+	// }
+	// var oBtn = document.getElementById("btn");
+	// var oBox = document.getElementById('div1');
+	// oBtn.onmouseover = function(){
+	// 	oBox.style.display = 'block';
+	// }
+	// oBtn.onmouseout = function(){
+	// 	oBox.style.display = 'none';
+	// }
+	// var oBtn = document.getElementById("btn");
+	// var oBox = document.getElementById('div1');
+	// oBtn.onmouseover = function(){
+	// 	setTimeout(function(){
+	// 		oBox.style.display = 'block';
+	// 	},1000)
+	// }
+	// oBtn.onmouseout = function(){
+	// 	setTimeout(function(){
+	// 		oBox.style.display = 'none';
+	// 	},1000);
+	// }
+	var oBtn = document.getElementById("btn");
+	var oBtn2 = document.getElementById("btn1");
+	var oBox = document.getElementById('div1');
+	function alertBox(str){
+		// console.log(arguments[0])
+		console.log(str)
+		// alert(str);
+	 }
+	alertBox('adfasdfasdf');
+	oBtn.onclick = function(){
+		alertBox('我点了呀')
+	}
+	oBtn2.onclick = function(){
+		alertBox('adfasdfadsf')
+	}
+</script>
+</body> 
