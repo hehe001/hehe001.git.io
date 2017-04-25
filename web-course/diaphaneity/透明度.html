@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>新航路师徒学院，定位</title>
+    <meta name="keywords" content="关键词"/>
+    <meta name="description" content="描述"/>
+    <style type="text/css">
+    	* {
+    		margin: 0;
+    		padding: 0;
+    	}
+    	li {
+    		list-style: none;
+    	}
+    	.clearfix:after {
+    		content:'.';
+    		display:block;
+    		height:0px;
+    		clear:both;
+    		visibility:hidden;
+    	}
+		.clearfix {
+			*zoom:1;
+		}
+		.clear {
+		  clear: both;
+		  height: 0;
+		  overflow: hidden;
+		}
+		.m {
+			width: 1000px;
+			margin: 150px auto 0;
+		}
+		.pos-r {
+			width: 1000px;
+			height: 200px;
+			border: 1px solid red;
+			position: relative;
+			background: #ccc;
+		}
+		.pos-a {
+			position: absolute;
+			left: 0;
+			top: 10px;
+			z-index: 5;
+			width: 350px;
+			height: 350px;
+			background: blue;
+			filter: alpha(opacity=70);
+			opacity: 0.7;
+		}
+		.pos-a1 {
+			position: absolute;
+			left: 100px;
+			top: 100px;
+			z-index: 6;
+			width: 150px;
+			height: 150px;
+			/* background: yellow; */
+			color: #fff;
+			display: block;
+		}
+		/**
+			固定定位
+			相对浏览器可视区，body
+		*/
+		.d-fixed {
+			width: 50px;
+			height:100px;
+			background: red;
+			position: fixed;
+			right: 0;
+			top: 50px;
+			z-index: 1;
+		}
+		.he {
+			height: 1000px;
+		}
+		.div1 {
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+			margin: 0 auto;
+		}
+    </style>
+</head>
+<body>
+<div class="div1">你&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;好，这&lt;是&gt;&copy;什么&yen;什么</div>
+
+
+
+<div class="d-fixed"></div>
+<div class="m he">
+	<div class="pos-r">
+		<div class="pos-a">汉字汉字 </div>
+		sadfasdfadsfasdfasd<br/>
+		sadfasdfadsfasdfasd<br/>
+		<div class="pos-a1">汉字汉字</div>
+	</div>
+</div>
+</body>
+</html>
