@@ -6,9 +6,10 @@
 	<meta type="keywords" content="关键词、本网站的关键词"/>
 	<meta type="description" content="描述，本网站的描述，本页面的描述"/>
    	<link rel="stylesheet" type="text/css" href="/css/tab.css">
+   	<script src="/js/jquery.js"></script>
 </head>
 <body>
-<div class="banner">
+<div id="banner" class="banner">
 	<ul class="ban-bd">
 		<li class="bd-red"></li>
 		<li class="bd-yellow"></li>
@@ -19,6 +20,71 @@
 		<li class="tab-li tab-yellow"></li>
 		<li class="tab-li tab-blue"></li>
 	</ul>
+	<div class="entrance">
+		<a class="link1" href="javascript:;">
+			<span>链接入口一</span>
+			<i>The first link ebtry</i>
+		</a>
+		<a class="link1" href="javascript:;">
+			<span>链接入口二</span>
+			<i>The sencond link ebtry</i>
+		</a>
+		<a class="link1" href="javascript:;">
+			<span>链接入口三</span>
+			<i>The third link ebtry</i>
+		</a>
+	</div>
 </div>
+<script>
+// 《.ban-tab的hover效果》
+	// $('#banner').on('mouseover','.tab-red',function(){
+	// 	// alert("66")
+	// 	// $("#banner").find(".bd-yellow").css('display','none')
+	// 	$(this).addClass("tab-red2")
+	// 	$(this).siblings(".tab-yellow").removeClass("tab-yellow2")
+	// 	$(this).siblings(".tab-blue").removeClass("tab-blue2")
+
+	// }).on('mouseover','.tab-yellow',function(){
+	// 	$(this).addClass("tab-yellow2")
+	// 	$(this).siblings(".tab-red").removeClass("tab-red2")
+	// 	$(this).siblings(".tab-blue").removeClass("tab-blue2")
+
+	// }).on('mouseover','.tab-blue',function(){
+	// 	$(this).addClass("tab-blue2")
+	// 	$(this).siblings(".tab-red").removeClass("tab-red2")
+	// 	$(this).siblings(".tab-yellow").removeClass("tab-yellow2")
+	// })
+	var nub=0;
+	$('#banner').on('mouseover','.tab-li',function(){
+		// $(this).addClass("tab-black").siblings().removeClass("tab-black")
+		// var key = $(this).index();(获取当前的下标)
+		// $('.ban-bd').find("li").eq(key).show().siblings().hide()
+		// console.log(key)
+		var key = $(this).index();
+		nub=key;
+		 autoStart(key);
+	})
+	
+	var timer = null;
+	 timer = setInterval(function(){
+	 	nub++;
+	 	if(nub>3){
+	 		nub=0;
+	 	}
+        autoStart(nub);
+    },1000); 
+ 	function autoStart(key){
+	 	$("#banner").find(".tab-li").eq(key).addClass("tab-black").siblings().removeClass("tab-black")
+	 	// (获取当前的下标)
+		$('.ban-bd').find("li").eq(key).show().siblings().hide()
+		console.log(key)
+ 	}
+ 	$("#banner").mouseover(function(){
+         clearInterval(timer);
+    })
+    $("#banner").mouseout(function(){
+         timer = setInterval(autoStart,1000);
+    })
+</script>
 </body>
 </html>
